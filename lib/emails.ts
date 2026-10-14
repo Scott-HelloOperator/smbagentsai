@@ -36,7 +36,7 @@ function md(body: string, issue: number, p: Personal) {
 <p style="margin:0 0 10px;font-family:${MONO};font-size:13px;word-break:break-all"><a href="${link}" style="color:${C.ink}">${e(link)}</a></p>
 <p style="margin:0 0 4px"><strong>3 referrals</strong> unlock <strong>The Vault</strong>, our pack of copy-paste prompts for quotes, follow-ups, reviews and invoices.</p>
 <p style="margin:0 0 10px"><strong>10 referrals</strong> get you a <strong>free written AI audit</strong> of your business, delivered by email as a PDF or short video. No calls. No pitch.</p>
-<p style="margin:0;color:${C.muted}">${p.web ? "Subscribe to get your own link." : `You're at <strong style="color:${C.ink}">${count}</strong>. <a href="${SITE_URL}/me?code=${p.refCode || ""}" style="color:${C.muted}">Track it here</a>.`}</p></td></tr></table>\n\n`;
+<p style="margin:0;color:${C.muted}">${p.web || !p.refCode ? `<a href="${SITE_URL}/#switchboard" style="color:${C.muted}">Subscribe</a> to get your own link.` : `You're at <strong style="color:${C.ink}">${count}</strong>. <a href="${SITE_URL}/me?code=${p.refCode || ""}" style="color:${C.muted}">Track it here</a>.`}</p></td></tr></table>\n\n`;
   });
   return marked.parse(src, { renderer, async: false }) as string;
 }
