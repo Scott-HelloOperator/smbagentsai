@@ -1,130 +1,119 @@
-# SMB Agents AI · Light Brand Book (v1, Oct 2026)
+# SMB Agents AI · Brand Book (v2, Oct 2026)
 
-> **One line:** SMB Agents AI is the friendly switchboard for small-business AI. We take the noise, find the use case that fits your problem, and patch you straight through.
+> **One line:** a plain-English field guide to AI agents for small-business owners. Editorial, warm, dry. Made by Hello Operator.
+
+**v2 change log:** v1 went too playful (chunky ink outlines, hard drop shadows, mustard highlighter, cute mascot). v2 is editorial: hairline borders, generous whitespace, restrained coral, and a deadpan Gary.
 
 ---
 
-## 1. Where we come from (and how you can tell)
+## 1. The Hello Operator connection
 
-SMB Agents AI is made by **Hello Operator** (hellooperator.ai). The two brands look different on purpose (Hello Operator is a B2B agency; we're a kitchen-table guide for owners), but **two elements carry over** so anyone who knows HO can spot the family resemblance:
+The brand stands on its own, but **two elements carry over** so the family resemblance is visible to anyone who knows Hello Operator:
 
 | Shared element | Hello Operator | SMB Agents AI |
 |---|---|---|
-| **Operator Coral** `#ED7347` | HO's brand orange (`--base-color-brand--orange`), used on its pill highlights and CTAs | Our primary color: buttons, the logo jack, highlights |
-| **The operator dot / jack** | The filled dot that replaces the "O" in **●PERATOR** | A coral "switchboard jack" (a ringed dot) in front of our wordmark, used as a bullet and status light |
+| **Operator Coral `#ED7347`** | HO's brand orange (`--base-color-brand--orange`), pills and CTAs | Accent only: the operator dot, the one primary CTA per page (Subscribe), link underlines on hover |
+| **The operator dot** | The filled dot that replaces the "O" in **●PERATOR** | A solid coral dot before the wordmark, eyebrows, and the meme footer |
 
-Supporting cues: the operator/phone language ("patched through", "picking up", **The Switchboard**) and rounded pill shapes, which HO also uses. Everything else (cream paper, serif headlines, Gary) is ours.
-
-*HO reference (from hellooperator.ai CSS + the Canva "Hello Operator" brand kit): pale lime `#EBF2BD`, deep green-black ink `#011B17`, lime `#CDE476`, coral `#ED7347` / light coral `#FFA075`, blue `#62A2DB` / `#D6EEF8`; fonts PP Neue Machina (headlines) + system sans; the `HELLO / ●PERATOR` stacked wordmark; collage-style illustration with outlined UI cards.*
+Supporting cue: operator/phone language, used sparingly (**The Switchboard**). *HO reference: pale lime `#EBF2BD`, green-black `#011B17`, lime `#CDE476`, coral `#ED7347`/`#FFA075`, blue `#62A2DB`; PP Neue Machina; stacked `HELLO / ●PERATOR` wordmark (from hellooperator.ai CSS and the Canva "Hello Operator" brand kit).*
 
 ---
 
 ## 2. Personality
 
-**Warm, human, fun, and honest.** The neighbor who happens to know a lot about AI, not a startup that wants your demo slot.
+**Editorial, warm, direct, dry.** Think a good business weekly (Morning Brew's readability, Stripe Press's restraint) written by someone who has actually run a company.
 
-- **We are:** plain-spoken, practical, upbeat, a little cheeky, honest about cost and effort.
-- **We are not:** hype-y, futuristic, "revolutionary", dark-mode neon, gradient-blob, robot-hand-touching-human-hand.
-- **Anti-generic test:** if a screen could be any AI startup's landing page, it's wrong. Swap glows for ink outlines, gradients for flat color, stock 3D for Gary.
+- **Is:** plain-spoken, specific, honest about cost and effort, quietly funny.
+- **Isn't:** hype, futurism, neon, gradients, glossy 3D, cute, "playful startup", Gumroad brutalism.
+- **Test:** if it looks like an AI startup landing page or a kids' app, it's wrong.
 
 ---
 
 ## 3. Color
 
-Light mode only. Cream paper, espresso ink, one loud color, two friends.
+Light mode only. Mostly paper and ink. Coral is a spice.
 
-| Token (Tailwind) | Name | Hex | Use |
+| Token | Name | Hex | Use |
 |---|---|---|---|
-| `cream` | Paper | `#FBF7F0` | Page background. Always. |
-| `ink` | Espresso | `#2B2420` | Text, 2px outlines, the hard "pop" shadow |
-| `clay-500` / `coral-500` | **Operator Coral** (shared w/ HO) | `#ED7347` | Primary buttons (with **ink** text, 5.2:1), logo jack, accents |
-| `clay-600` | Coral Deep | `#C9502A` | White-on-coral if ever needed (4.5:1), large text |
-| `clay-700` | Coral Ink | `#9A3B1C` | Small coral text on cream (eyebrows, links), 6.5:1 |
-| `clay-50` | Coral Wash | `#FDF0EA` | Soft card fills (quiz CTA) |
-| `mustard-400` | Switchboard Lamp | `#F4B740` | Highlighter swipes, the "AI" pill in the logo, sparing |
-| `mustard-50` | Lamp Wash | `#FEF6E2` | Switchboard signup card, Gary callouts |
-| `sage-600` | Gary Green | `#4F7A55` | Success states, "Meet the intern" eyebrows (4.6:1 on cream) |
-| `sage-100` | Sage Wash | `#E2ECDF` | Calm fills |
+| `cream` | Paper | `#FBF7F0` | Page background |
+| `ink` | Espresso | `#2B2420` | Text; secondary buttons (ink fill, cream text); active filter chip |
+| `ink/10–15` | Hairline | — | All borders and rules. 1px only. |
+| `ink/55–70` | Muted | — | Secondary copy, eyebrows |
+| `clay-500` | **Operator Coral** | `#ED7347` | Dot, one primary CTA per page (ink text on coral, 5.2:1), "Needs help" marker |
+| `clay-700` | Coral Ink | `#9A3B1C` | Small coral text on cream (category labels), 6.5:1 |
+| `sage-500/600` | Sage | `#7FA07A` / `#4F7A55` | Success, "No-code" marker |
+| `#F6F1E8` | Card back | — | Flip-card reverse side |
 
-**Ratio:** ~70% cream, 20% ink, 7% coral, 3% mustard/sage. One coral button per screen.
+**Ratio:** ~85% paper/white, ~12% ink, ≤3% coral. **Retired from v1:** mustard highlighter, coral washes on big surfaces, colored pill badges.
 
 ---
 
 ## 4. Type
 
-| Role | Font | Notes |
+| Role | Font | Settings |
 |---|---|---|
-| Display / headlines | **Fraunces** (Google, variable; SOFT 100, WONK 0, semibold 600) | Soft, bookish, a bit old-timey, a nod to the switchboard era. Tight tracking, line-height ~1.05. |
-| Body / UI | **Figtree** (Google) | Friendly geometric sans, very legible on phones. 16–17px body. |
-| Eyebrows | Figtree bold, uppercase, tracking 0.12–0.14em, 12px | Coral Ink or Gary Green. Usually led by the jack dot. |
+| Display | **Fraunces** (variable) | Semibold 600, SOFT 30, tracking −0.015 to −0.02em, line-height ~1.05. *Italic regular* for one emphasis word per headline, max. |
+| Body / UI | **Figtree** | 16–17px, line-height 1.6–1.7, `ink/65–85` |
+| Eyebrow | Figtree semibold, 11px, uppercase, tracking 0.16em, `ink/55` | Led by a 7px coral dot |
+| Signature | **Herr Von Muellerhoff** | About-page sign-off only. Never for UI or headlines. |
 
-Loaded via `next/font/google` as `--font-display` / `--font-body` → Tailwind `font-serif` / `font-sans`.
+Loaded via `next/font/google` as `--font-display`, `--font-body`, `--font-sig` → Tailwind `font-serif`, `font-sans`, `font-sig`.
 
 ---
 
 ## 5. Logo
 
-**Wordmark:** `[●] SMB Agents (AI)`
-- **Jack** = coral circle, 2px espresso outline, cream center "socket". It's HO's operator dot, plugged in.
-- **"SMB Agents"** in Fraunces semibold.
-- **"AI"** as a small mustard pill in Figtree extra-bold: AI is the tool, not the headline.
-- Min size: jack 16px. Clear space = jack diameter on all sides.
-- Favicon/app icon = the jack alone on cream (`app/icon.svg`).
-- Don'ts: no gradients, no glow, don't recolor the jack, don't drop the outline, don't set "AI" bigger than "SMB Agents".
+`● SMB Agents AI`: a solid coral dot, "SMB Agents" in Fraunces semibold, "AI" in small tracked Figtree at 55% ink. AI is the tool, not the headline.
+- Favicon: coral dot on an espresso rounded square.
+- Don'ts: no outlines on the dot, no pills, no gradients, don't enlarge "AI".
 
 ---
 
-## 6. Shapes & motifs
+## 6. Components & spacing
 
-- **Ink outline + hard pop shadow** (`border-2 border-ink` + `3px 3px 0 #2B2420`) on hero cards and buttons: the Saturday-morning cartoon cel look.
-- **Pills** for buttons, inputs, chips (shared with HO).
-- **Highlighter swipe** (mustard, behind 1–3 words of a headline).
-- **Switchboard language and motifs:** jacks, cords, "patched through", "picking up". Use as seasoning, max one pun per screen.
+- **Borders:** 1px `ink/10` hairlines. **No hard drop shadows, no 2px outlines.** Optional soft shadow (`shadow-soft`) only for floating elements.
+- **Radius:** 12–16px on cards and inputs; pills for buttons and chips.
+- **Buttons:** primary = coral fill, ink text (one per page); secondary = ink fill, cream text; tertiary = underlined text link.
+- **Sections:** separated by whitespace and hairline rules (`border-y`), not boxes. Vertical rhythm 80px between major sections on desktop, 64px on mobile.
+- **Measure:** long-form copy max 640px.
+- Phone-first: design at 390px; tap targets ≥ 44px; one primary action per screen.
 
 ---
 
 ## 7. Voice
 
-- Write like Scott talking to an owner across the counter: short sentences, second person, concrete nouns (invoices, missed calls, Tuesday).
-- Lead with the **problem**, then the honest cost: tools, setup time, monthly $, what can go wrong.
-- Banned: *revolutionary, game-changer, unlock, supercharge, seamless, cutting-edge, leverage, 10x*.
-- Humor comes from Gary and real small-biz life, never from making fun of the reader.
-- Newsletter = **The Switchboard**. CTA: **"Subscribe to The Switchboard."**
-- Examples: ✅ "Pick a headache, flip a card, copy the prompt." ❌ "Unlock the power of agentic AI."
+- Direct, dry, genuine. Short sentences. Second person. Concrete nouns (invoices, missed calls, the shoebox of receipts).
+- Lead with the problem, then the honest cost: tools, setup time, monthly $, what breaks.
+- No cutesy puns in UI. One operator nod per page is plenty.
+- Banned: *revolutionary, game-changer, unlock, supercharge, seamless, cutting-edge, leverage, 10x, synergy*.
+- Newsletter: **The Switchboard**. CTA: **"Subscribe to The Switchboard."**
 
 ---
 
-## 8. Gary the AI Intern: mascot rules
+## 8. Gary the AI Intern (v2)
 
-**Who he is:** a small, earnest robot intern. Eager, tireless, slightly overconfident. He's the honest picture of AI tools: genuinely helpful, as long as a human keeps an eye on him. Catchphrase/format: **"Oh, Gary."**
+**Who he is:** a deadpan, slightly busted robot built from beige 1990s office hardware. Office-printer energy: technically working, spiritually done. He's the honest voice of every over-promised AI tool, and the only one in the room willing to say the quiet part.
 
-**Look (see `gary-character.png`):**
-- Rounded-square TV-style head with a cream face screen, big round eyes, simple smile.
-- Single antenna with a mustard ball.
-- **Vintage operator headset** (one earpiece + curved mouthpiece): his link to Hello Operator.
-- **Clipboard** (sage), "GARY" name badge, coral body, sage segmented arms/legs, mustard joints, coral boots.
-- Style: **classic 2D cartoon**. Bold ink outlines, flat colors, no gradients, no 3D, no gloss, no photoreal.
+**Look (`gary-v2.png`):** beige CRT/fax head with a cracked screen showing flat-line eyes and a flat mouth; vintage switchboard operator headset with coiled cord (the HO nod); paper-tray slot in his chest with a jammed sheet; duct tape, sticky notes, a dented corner; small coral status light; clipboard. Flat editorial illustration with grain, muted putty/grey palette. **Never cute. Never smiling. No big eyes.**
 
-**Rules:**
-1. Gary fails at *AI hype*, never at the reader's expense, and never at a real, named business.
-2. Gary is always well-meaning. No menace, no "robots are taking your job" jokes.
-3. One Gary per page section, max. He supports content; he doesn't replace it.
-4. Keep him original: never draw him like Bender, WALL·E, or any existing character. No metallic chrome, no cigars, no visor-eye.
-5. Meme format: one scene, one bold caption ("OH GARY."), a background gag (fire, paper avalanche, "TOTALLY FINE" box).
-6. Gary never gives advice that contradicts the site (always: start small, human in the loop).
+**Humor:** cynical, sarcastic, salty, for jaded owners. Targets, in order of preference:
+1. AI hype, "agent swarms", vendor demos, "fully autonomous" claims
+2. VCs, AI bros, LinkedIn gurus *as archetypes*
+3. The owner's own chaos (shoeboxes, "two weeks", the guy named Dave)
+4. Gary himself
 
----
+**Hard lines:** no slurs; no punching at protected groups; nothing about real, named people or companies; no jokes that contradict the site's advice (start small, human in the loop).
 
-## 9. Layout (phone-first)
-
-- Design at 390px first; max content width 72rem; generous 16px side padding.
-- One primary action per screen (coral button). Tap targets ≥ 44px.
-- Cards: white or wash fill, `rounded-3xl`, ink outline only for hero/feature cards (directory cards stay light to keep scanning easy).
-- Light mode only. `theme-color` = Paper `#FBF7F0`.
+**Meme format:** text lives in real fonts, rendered in code (`scripts/gary/make_memes.py`), never AI-rendered.
+- Paper background, 1080px wide. Setup line: Figtree 50px, muted. Punchline: Fraunces 66px semibold, ink.
+- Illustrated Gary scene below, no text in the art.
+- Footer: coral dot + "Oh, Gary." left, "smbagentsai.com" right.
+- **Contractor snort test:** if a GC reading it on a job-site break wouldn't snort, cut it.
 
 ---
 
-## 10. Asset index
-- `/workspace/gary-character.png`: Gary model sheet (front / wave / oops)
-- `/workspace/gary-meme-1.png`: "Oh Gary" meme #1 (AI saved 400 hours / coffee machine fire)
-- Site copies: `public/gary/*`, headshot `public/team/scott-mackin.png` (Scott's illustrated portrait from hellooperator.ai/about)
+## 9. Assets
+- `/workspace/gary-v2.png`: Gary v2 model sheet (front / side / back)
+- `/workspace/gary-memes-v2-1..4.png`: meme set v2 (#2 is live on the home page as `public/gary/oh-gary-shoebox.webp`)
+- `public/team/scott-mackin.webp|jpg`: Scott's photo, 400px, About sign-off
+- Retired: all v1 Gary art (cute coral robot), illustrated portrait

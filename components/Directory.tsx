@@ -24,7 +24,7 @@ export default function Directory({ items, initial = {} }: { items: UseCase[]; i
         className="w-full rounded-2xl border border-ink/10 bg-white px-4 py-3.5 text-base shadow-sm outline-none focus:border-clay-500 focus:ring-2 focus:ring-clay-100" aria-label="Search use cases" />
       <div className="-mx-4 mt-4 flex gap-2 overflow-x-auto px-4 pb-2 sm:flex-wrap" role="list">
         {["", ...CATEGORIES].map((c) => (
-          <button key={c || "all"} onClick={() => setCat(c)} className={`chip ${cat === c ? "!border-clay-600 !bg-clay-600 text-white" : "hover:border-ink/30"}`}>{c || "All"}</button>
+          <button key={c || "all"} onClick={() => setCat(c)} className={`chip ${cat === c ? "!border-ink !bg-ink text-cream" : "hover:border-ink/30"}`}>{c || "All"}</button>
         ))}
       </div>
       <div className="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-4">

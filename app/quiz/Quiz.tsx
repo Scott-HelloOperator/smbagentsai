@@ -14,7 +14,7 @@ export default function Quiz() {
       <p className="text-sm font-medium text-clay-600">The SMB Agents AI Readiness Quiz</p>
       <h1 className="mt-2 font-serif text-4xl font-bold leading-tight">How ready is your business for AI agents?</h1>
       <p className="mt-4 text-lg text-ink/70">9 quick tap questions · about 3 minutes. Get your score out of 100 and a personal plan: the top 5 agents worth trying first.</p>
-      <button onClick={() => setStep(0)} className="mt-8 rounded-2xl bg-clay-600 px-8 py-4 text-lg font-semibold text-white shadow-sm hover:bg-clay-700">Start the quiz →</button>
+      <button onClick={() => setStep(0)} className="btn mt-8 px-8 py-4 text-lg">Start the quiz →</button>
       <p className="mt-3 text-xs text-ink/50">Free. No email needed to see your score.</p>
     </section>);
   const q = QUESTIONS[step]; const multi = q.multi; const cur = a[q.id];

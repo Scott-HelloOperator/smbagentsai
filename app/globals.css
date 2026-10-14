@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 body { @apply bg-cream font-sans text-ink antialiased; }
-h1, h2, h3, .font-serif { font-variation-settings: "SOFT" 100, "WONK" 0; }
+h1, h2, h3, .font-serif { font-variation-settings: "SOFT" 30, "WONK" 0; }
 ::selection { background: #FCEBC0; }
 .flip { perspective: 1200px; }
 .flip-inner { position: relative; transition: transform .55s cubic-bezier(.2,.7,.2,1); transform-style: preserve-3d; height: 100%; }
@@ -11,9 +11,11 @@ h1, h2, h3, .font-serif { font-variation-settings: "SOFT" 100, "WONK" 0; }
 .face-back { transform: rotateY(180deg); }
 @media (prefers-reduced-motion: reduce) { .flip-inner { transition: none; } }
 .chip { @apply inline-flex items-center rounded-full border border-ink/15 bg-white px-3 py-1.5 text-sm whitespace-nowrap; }
-.badge { @apply inline-flex items-center rounded-md bg-clay-50 px-2 py-0.5 text-xs font-medium text-clay-700; }
+.badge { @apply inline-flex items-center rounded-md bg-ink/[0.05] px-2 py-0.5 text-xs font-medium text-ink/70; }
 .prose-sm p { @apply mb-3 leading-relaxed; }
 @layer components {
-.btn { @apply inline-flex items-center justify-center rounded-full border-2 border-ink bg-clay-500 px-5 py-3 font-semibold text-ink shadow-pop transition hover:-translate-y-px active:translate-y-0 active:shadow-none disabled:opacity-60; }
-.card-pop { @apply rounded-3xl border-2 border-ink bg-white shadow-pop; }
+.btn { @apply inline-flex items-center justify-center rounded-full bg-ink px-5 py-3 text-[15px] font-semibold text-cream transition hover:bg-ink/85 disabled:opacity-60; }
+.btn-coral { @apply inline-flex items-center justify-center rounded-full bg-clay-500 px-5 py-3 text-[15px] font-semibold text-ink transition hover:bg-clay-300 disabled:opacity-60; }
+.eyebrow { @apply inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.16em] text-ink/55; }
+.card-pop { @apply rounded-2xl border border-ink/10 bg-white shadow-soft; }
 }

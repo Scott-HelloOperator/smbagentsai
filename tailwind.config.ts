@@ -15,8 +15,9 @@ export default {
     fontFamily: {
       sans: ["var(--font-body)", "ui-sans-serif", "system-ui", "-apple-system", "Segoe UI", "Roboto", "sans-serif"],
       serif: ["var(--font-display)", "Georgia", "Cambria", "serif"],
+      sig: ["var(--font-sig)", "cursive"],
     },
-    boxShadow: { pop: "3px 3px 0 0 #2B2420" },
+    boxShadow: { soft: "0 1px 2px rgba(43,36,32,.04), 0 8px 24px -12px rgba(43,36,32,.12)" },
   } },
   plugins: [],
 } satisfies Config;
