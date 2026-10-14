@@ -1,5 +1,6 @@
 // Pluggable LLM provider. Set ENGINE_LLM_PROVIDER=openai|anthropic (auto-detected from whichever key exists).
 import { CATEGORIES, INDUSTRIES, TOOLS, DIFFICULTIES } from "./taxonomy.mjs";
+import { goalErrors, GOALS_RULES } from "./goals.mjs";
 
 export function provider() {
   const p = process.env.ENGINE_LLM_PROVIDER || (process.env.OPENAI_API_KEY ? "openai" : process.env.ANTHROPIC_API_KEY ? "anthropic" : null);
@@ -11,6 +12,7 @@ You receive ONE public post. Decide if it is a genuine, first-hand (or clearly r
 REJECT if: hype, promotion/ad for the poster's own product, crypto, get-rich-quick, purely a question with no implemented solution, developer-only/technical with no business outcome, enterprise (>200 staff), or too vague to describe what was done.
 If ACCEPTED, rewrite into our schema. HARD RULES:
 - Use ONLY facts in the post. Never invent numbers, names, tools, results, or quotes. If the post gives no number, describe the result qualitatively.
+${GOALS_RULES}
 - "evidence" must be 1-3 short phrases copied VERBATIM from the post that support the result.
 - Do not name or quote the poster. Say "a [type of business] owner".
 - Plain English, no jargon, no hype. Title is outcome-style ("Answer every lead within 5 minutes").
@@ -61,6 +63,7 @@ export function validate(o, c) {
   // Every number in result/how_it_went must appear in the source (no fabricated stats).
   const nums = `${o.result} ${o.how_it_went} ${o.summary}`.match(/\d[\d,.]*%?/g) || [];
   for (const n of nums) if (!src.includes(n.replace(/,/g, "")) && !src.includes(n)) errs.push(`number not in source: ${n}`);
+  errs.push(...goalErrors(o, src));
   o.industries = (o.industries || []).filter((x) => INDUSTRIES.includes(x));
   return errs;
 }
