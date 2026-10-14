@@ -1,10 +1,10 @@
 import { NextResponse } from "next/server";
-import { adminClient } from "@/lib/data";
+import { subscribe, refLink } from "@/lib/referrals";
 export async function POST(req: Request) {
-  const { email } = await req.json().catch(() => ({}));
+  const { email, ref, source } = await req.json().catch(() => ({}));
   if (typeof email !== "string" || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return NextResponse.json({ error: "Invalid email" }, { status: 400 });
-  const db = adminClient();
-  if (!db) { console.info("[subscribe] Supabase not configured; no-op for", email); return NextResponse.json({ ok: true, stored: false }); }
-  const { error } = await db.from("subscribers").upsert({ email: email.toLowerCase(), source: "site" }, { onConflict: "email" });
-  return error ? NextResponse.json({ error: "Could not subscribe" }, { status: 500 }) : NextResponse.json({ ok: true, stored: true });
+  try {
+    const r = await subscribe(email, { ref, source: typeof source === "string" ? source.slice(0, 40) : "site" });
+    return NextResponse.json({ ok: true, stored: r.stored, code: r.code, link: r.code ? refLink(r.code) : null });
+  } catch (e) { console.error("[subscribe]", e); return NextResponse.json({ error: "Could not subscribe" }, { status: 500 }); }
 }

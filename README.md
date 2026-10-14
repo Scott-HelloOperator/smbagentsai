@@ -61,3 +61,17 @@ Pipeline (`scripts/engine/`, zero dependencies, Node 22):
 Local dry run (no keys needed; prints candidates, writes nothing): `node scripts/engine/run.mjs --dry-run --days=30`
 
 GitHub repo → Settings → Secrets and variables → Actions → add: `NEXT_PUBLIC_SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`, `REVALIDATE_SECRET` (same value as in Vercel), and `OPENAI_API_KEY` **or** `ANTHROPIC_API_KEY`. Apply `supabase/migrations/0002_engine.sql` first.
+
+## Growth features
+### AI Readiness Quiz (`/quiz`)
+9 tap questions (~3 min). Scoring and plan matching live in `lib/quiz.ts` (score /100 from tools, response speed, invoicing, documentation, tech comfort, AI usage; plan ranks use cases by time-sink category, industry, tools, and difficulty vs. comfort). Results are stored in `quiz_results`; the share page `/quiz/result/[id]` shows score + #1 pick, the other 4 unlock with email (saved to `subscribers` + `quiz_results.email`). Dynamic OG image at `/quiz/result/[id]/opengraph-image`. Without Supabase the result id encodes the answers so it still works.
+
+### Referral vault
+Every subscriber gets a `ref_code`; `?ref=code` on any page is remembered for 60 days and credited on signup (newsletter or quiz). Status page: `/me?code=...`.
+- 3 referrals → `/vault?code=...` (12-prompt premium pack, `lib/vault.ts`)
+- 10 referrals → "Request free AI audit" → row in `audit_requests` (status `new`). Follow up from Supabase: `select * from audit_requests where status='new';`
+
+Migration: `supabase/migrations/0003_quiz_referrals.sql`.
+
+### Email (not yet connected)
+All sends go through `notify()` in `lib/referrals.ts` (welcome w/ referral link, vault unlocked, audit requested). It's a no-op until you set `RESEND_API_KEY` and `EMAIL_FROM` in Vercel and verify the sending domain (smbagentsai.com DNS records) in Resend. Daily "5 use cases" sending also needs this plus a scheduled job.

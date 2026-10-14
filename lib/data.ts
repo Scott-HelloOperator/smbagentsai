@@ -25,5 +25,6 @@ export async function getUseCase(slug: string) { return (await getUseCases()).fi
 
 export function adminClient() {
   const key = process.env.SUPABASE_SERVICE_ROLE_KEY;
-  return url && key ? createClient(url, key) : null;
+  // no-store: never let Next's data cache serve stale referral counts / quiz rows.
+  return url && key ? createClient(url, key, { auth: { persistSession: false }, global: { fetch: (i, init) => fetch(i, { ...init, cache: "no-store" }) } }) : null;
 }

@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import RefCapture from "@/components/RefCapture";
 import { SITE_URL } from "@/lib/taxonomy";
 
 export const metadata: Metadata = {
@@ -14,5 +15,5 @@ export const metadata: Metadata = {
 export const viewport: Viewport = { themeColor: "#FBF7F0", width: "device-width", initialScale: 1 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  return (<html lang="en"><body><Header /><main className="mx-auto max-w-6xl px-4">{children}</main><Footer /></body></html>);
+  return (<html lang="en"><body><RefCapture /><Header /><main className="mx-auto max-w-6xl px-4">{children}</main><Footer /></body></html>);
 }
