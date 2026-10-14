@@ -10,13 +10,13 @@ export default function About() {
     <h1 className="mt-4 font-serif text-4xl font-semibold leading-[1.1] tracking-[-0.015em] text-ink sm:text-5xl">Why this site exists</h1>
 
     <div className="mt-8 space-y-5">
-      <p>I&apos;ve started a few companies and sold two. For more than ten years I&apos;ve taught strategic digital marketing to MBA students at EADA Business School. These days I run <a href="https://hellooperator.ai" className={a} target="_blank" rel="noopener">Hello Operator</a>, which means I talk to business owners all day.</p>
-      <p>They all ask the same thing: how can AI actually help me grow my company and win back some time? Not in a keynote. In my business, this quarter, with the people and tools I already have.</p>
-      <p>Most of what they get in return is hype, jargon, or a demo that falls apart on contact with a real inbox.</p>
-      <p>This site is the straight answer. Real use cases, tested, sorted by the problem you actually have. Each one tells you what it takes: the tools, the setup time, the cost, and what can go wrong. Nothing else.</p>
-      <p>Entries marked as examples are illustrative, not stories about specific businesses. The site is free. Anything sponsored is labeled.</p>
+      <p>Hi, I&apos;m Scott. If you run a small business, I already know a few things about your week. You&apos;ve made payroll at least once with your stomach in a knot. You&apos;re the CEO, the IT department, and the person who fixes the printer. And somewhere in your inbox is a vendor promising their AI will &ldquo;transform&rdquo; everything by Friday.</p>
+      <p>I&apos;ve been on your side of that inbox for a long time. I&apos;ve started companies, had two exits, and spent 15 years building businesses in Barcelona, which taught me that chaos is fluent in every language. Along the way I spent more than ten years teaching strategic digital marketing to MBA students at EADA Business School, mostly trying to get smart people to stop chasing shiny things.</p>
+      <p>These days I run <a href="https://hellooperator.ai" className={a} target="_blank" rel="noopener">Hello Operator</a>, an AI-first agency, so I spend a lot of time talking with business owners. Different industries, same question: <em>how can AI actually help me grow my company and get some of my time back?</em> No buzzwords, no forty-slide deck. Just tell me what works.</p>
+      <p>That&apos;s what this site is. Real use cases, vetted, sorted by the problem you actually have: slow payments, leads slipping through the cracks, an inbox that never ends. Each one tells you the tools, the setup time, the cost, and what can go wrong, in plain English. Flip a card, copy the prompt, go have a slightly better Tuesday.</p>
       <p>The robot in the memes is our AI intern. He is not a role model.</p>
-      <p>If you&apos;ve built something that works, <Link className={a} href="/submit">send it in</Link>. If you want five of these each morning, <Link className={a} href="/#switchboard">subscribe to The Switchboard</Link>.</p>
+      <p>If you&apos;ve built something that works, <Link className={a} href="/submit">send it in</Link>, and I&apos;d love to see it. If you want the best new ones twice a week, <Link className={a} href="/#switchboard">subscribe to The Switchboard</Link>. Pull up a chair. You&apos;re among friends here.</p>
+      <p className="text-[14px] leading-relaxed text-ink/55">Entries marked as examples are illustrative, not stories about specific businesses. The site is free, and anything sponsored is labeled.</p>
     </div>
 
     <footer className="mt-14 border-t border-ink/10 pt-8">
