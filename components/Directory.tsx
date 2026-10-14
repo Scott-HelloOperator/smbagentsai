@@ -17,17 +17,13 @@ export default function Directory({ items, initial = {} }: { items: UseCase[]; i
       && (!s || [u.title, u.result, u.summary, u.category, u.agent, ...u.tools, ...u.industries].join(" ").toLowerCase().includes(s)));
     return [...r].sort((a, b) => sort === "easiest" ? diffRank[a.difficulty] - diffRank[b.difficulty] : sort === "impact" ? (impactRank[a.impact] ?? 3) - (impactRank[b.impact] ?? 3) : sort === "az" ? a.title.localeCompare(b.title) : b.published_at.localeCompare(a.published_at));
   }, [items, q, cat, tool, ind, diff, sort]);
-  const sel = "w-full rounded-xl border border-ink/10 bg-white px-3 py-2.5 text-sm";
+  const sel = "w-full rounded-xl border border-ink/10 bg-white px-3 py-2 text-sm sm:py-2.5";
   return (
     <section>
+      <div className="lg:flex lg:items-center lg:gap-2">
       <input type="search" value={q} onChange={(e) => setQ(e.target.value)} placeholder="What's eating your week? Try “invoices” or “reviews”"
-        className="w-full rounded-2xl border border-ink/10 bg-white px-4 py-3.5 text-base shadow-sm outline-none focus:border-clay-500 focus:ring-2 focus:ring-clay-100" aria-label="Search use cases" />
-      <div className="-mx-4 mt-4 flex gap-2 overflow-x-auto px-4 pb-2 sm:flex-wrap" role="list">
-        {["", ...CATEGORIES].map((c) => (
-          <button key={c || "all"} onClick={() => setCat(c)} className={`chip ${cat === c ? "!border-ink !bg-ink text-cream" : "hover:border-ink/30"}`}>{c || "All"}</button>
-        ))}
-      </div>
-      <div className="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-4">
+        className="w-full rounded-2xl border border-ink/10 bg-white px-4 py-3 text-base shadow-sm lg:w-[36%] lg:shrink-0 lg:py-2.5 lg:text-sm outline-none focus:border-clay-500 focus:ring-2 focus:ring-clay-100" aria-label="Search use cases" />
+      <div className="mt-2 grid grid-cols-2 gap-2 sm:grid-cols-4 lg:mt-0 lg:flex-1">
         <select aria-label="Tool" className={sel} value={tool} onChange={(e) => setTool(e.target.value)}><option value="">Any tool</option>{TOOLS.map((t) => <option key={t}>{t}</option>)}</select>
         <select aria-label="Industry" className={sel} value={ind} onChange={(e) => setInd(e.target.value)}><option value="">Any industry</option>{INDUSTRIES.map((t) => <option key={t}>{t}</option>)}</select>
         <select aria-label="Difficulty" className={sel} value={diff} onChange={(e) => setDiff(e.target.value)}><option value="">Any difficulty</option>{DIFFICULTIES.map((t) => <option key={t}>{t}</option>)}</select>
@@ -35,8 +31,14 @@ export default function Directory({ items, initial = {} }: { items: UseCase[]; i
           <option value="newest">Newest</option><option value="easiest">Easiest first</option><option value="impact">Biggest impact</option><option value="az">A–Z</option>
         </select>
       </div>
-      <p className="mt-4 text-sm text-ink/60" aria-live="polite">{list.length} use case{list.length === 1 ? "" : "s"}</p>
-      <div className="mt-3 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">{list.map((u) => <FlipCard key={u.slug} u={u} />)}</div>
+      </div>
+      <div className="-mx-4 mt-3 flex gap-2 overflow-x-auto px-4 pb-1" role="list">
+        {["", ...CATEGORIES].map((c) => (
+          <button key={c || "all"} onClick={() => setCat(c)} className={`chip ${cat === c ? "!border-ink !bg-ink text-cream" : "hover:border-ink/30"}`}>{c || "All"}</button>
+        ))}
+      </div>
+      <p className="mt-2 text-sm text-ink/60" aria-live="polite">{list.length} use case{list.length === 1 ? "" : "s"}</p>
+      <div className="mt-2 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">{list.map((u) => <FlipCard key={u.slug} u={u} />)}</div>
       {!list.length && <p className="mt-8 rounded-xl bg-white p-6 text-center text-ink/60">Nothing matches yet. Try clearing a filter — or <a href="/submit" className="underline">tell us what you need</a>.</p>}
     </section>
   );

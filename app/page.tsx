@@ -8,15 +8,15 @@ export const revalidate = 3600;
 export default async function Home() {
   const items = await getUseCases();
   return (<>
-    <section className="pb-5 pt-6 sm:pb-6 sm:pt-10">
+    <section className="pb-4 pt-5 sm:pb-5 sm:pt-8">
       <p className="eyebrow"><Jack size={7} /> For businesses under 200 people</p>
-      <h1 className="mt-3 max-w-3xl font-serif text-[2.25rem] font-semibold leading-[1.04] tracking-[-0.02em] sm:text-[3.5rem]">Real AI agent use cases, sorted by the problem you <em className="font-normal italic">actually</em> have.</h1>
-      <p className="mt-3 max-w-xl text-lg leading-relaxed text-ink/65">Pick a headache, flip a card, copy the prompt. Plain English, honest about cost and effort, no hype.</p>
+      <h1 className="mt-3 max-w-[17ch] font-serif text-[2rem] sm:max-w-5xl font-semibold leading-[1.04] tracking-[-0.02em] sm:text-[3.25rem]">Real AI agent use cases, sorted by the problem you <em className="font-normal italic">actually</em> have.</h1>
+      <p className="mt-3 max-w-4xl text-base leading-relaxed sm:text-lg text-ink/65">Pick a headache, flip a card, copy the prompt. Plain English, honest about cost and effort, no hype.</p>
     </section>
-    <Link href="/quiz" className="group mb-6 flex items-center justify-between gap-4 border-y border-ink/10 py-3.5" data-testid="quiz-cta">
+    <Link href="/quiz" className="group mb-5 flex items-center justify-between gap-4 border-y border-ink/10 py-3" data-testid="quiz-cta">
       <div><p className="eyebrow !text-clay-700">New · 3-minute quiz</p>
-        <p className="mt-1 font-serif text-lg font-semibold sm:text-2xl">How ready is your business for AI agents?</p>
-        <p className="mt-1 text-sm text-ink/60">A score out of 100 and your top-5 agent plan.</p></div>
+        <p className="mt-1 font-serif text-lg font-semibold leading-snug sm:text-[1.375rem]">How ready is your business for AI agents?</p>
+        <p className="mt-0.5 hidden text-sm text-ink/60 sm:block">A score out of 100 and your top-5 agent plan.</p></div>
       <span className="btn shrink-0 px-4 py-2.5 text-sm">Take it <span className="ml-1 transition group-hover:translate-x-0.5">→</span></span>
     </Link>
     <Directory items={items} />
