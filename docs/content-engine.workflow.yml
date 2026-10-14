@@ -1,0 +1,21 @@
+name: Daily content engine
+on:
+  schedule: [{ cron: "15 11 * * *" }] # 11:15 UTC = 7:15 AM ET (EDT)
+  workflow_dispatch:
+    inputs: { dry_run: { description: "Dry run (no writes)", type: boolean, default: false } }
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - run: node scripts/engine/run.mjs ${{ inputs.dry_run && '--dry-run' || '' }}
+        env:
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          REVALIDATE_SECRET: ${{ secrets.REVALIDATE_SECRET }}
+          REVALIDATE_URL: https://smbagentsai.com/api/revalidate

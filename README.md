@@ -46,3 +46,18 @@ Without Supabase env vars the app reads `data/use-cases.json` and signups/submis
 `data/use-cases.json` is the fallback seed (regenerate via `python3 scripts/generate_seed.py`). Taxonomies live in `lib/taxonomy.ts`.
 
 Made by [Hello Operator](https://hellooperator.ai).
+
+## Daily content engine (Phase 2)
+Runs as a **GitHub Actions cron** (`.github/workflows/content-engine.yml` — currently stored at `docs/content-engine.workflow.yml`; copy it into `.github/workflows/` via GitHub UI or a token with the Workflows permission, daily 11:15 UTC ≈ 7:15 AM ET; also runnable manually with a dry-run toggle). GitHub Actions was chosen over Vercel Cron because Hobby cron is limited to once/day with short function timeouts, and the engine needs several minutes (polite Reddit pacing + LLM calls). Actions is free for public repos / within the free minutes for private ones.
+
+Pipeline (`scripts/engine/`, zero dependencies, Node 22):
+1. **Discover** (`sources.mjs`): Reddit public search RSS across r/smallbusiness, r/Entrepreneur, r/sweatystartup, r/automation, r/ChatGPT, r/n8n, r/zapier, r/AI_Agents and trade subs (JSON API is blocked for datacenter IPs; RSS works), plus Hacker News via the Algolia API. Dedupe by URL.
+2. **Skip already-seen** URLs (`engine_seen` table + existing `use_cases.source_url`).
+3. **Prefilter** (`prefilter.mjs`): cheap heuristics — needs AI/automation + owner/business + first-hand + outcome signals; rejects crypto/hype/spam/launch posts/dev-only.
+4. **LLM rewrite** (`llm.mjs`, OpenAI or Anthropic): accepts/rejects and rewrites into the schema.
+5. **Quality gates**: valid category/difficulty, ≥3 steps, prompt has `[placeholders]`, `evidence` quotes must appear verbatim in the source, and every number in result/summary/how-it-went must appear in the source.
+6. **Insert** to `use_cases` (`is_example=false`, published unless `ENGINE_AUTO_PUBLISH=false`), record in `engine_seen`, then POST `/api/revalidate` so the site updates.
+
+Local dry run (no keys needed; prints candidates, writes nothing): `node scripts/engine/run.mjs --dry-run --days=30`
+
+GitHub repo → Settings → Secrets and variables → Actions → add: `NEXT_PUBLIC_SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`, `REVALIDATE_SECRET` (same value as in Vercel), and `OPENAI_API_KEY` **or** `ANTHROPIC_API_KEY`. Apply `supabase/migrations/0002_engine.sql` first.
