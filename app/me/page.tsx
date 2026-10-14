@@ -17,12 +17,12 @@ export default async function Me({ searchParams }: { searchParams: { code?: stri
   const s = searchParams.code ? await status(searchParams.code) : null;
   if (!s) return (<section className="mx-auto max-w-xl pt-12">
     <h1 className="font-serif text-3xl font-bold">Your referral status</h1>
-    <p className="mt-3 text-ink/70">Open the link you got after signing up (it looks like <code>/me?code=abc123</code>). Not signed up yet? <Link className="underline" href="/#newsletter">Join the daily 5</Link> or <Link className="underline" href="/quiz">take the quiz</Link>.</p>
+    <p className="mt-3 text-ink/70">Open the link you got after signing up (it looks like <code>/me?code=abc123</code>). Not signed up yet? <Link className="underline" href="/#switchboard">Subscribe to The Switchboard</Link> or <Link className="underline" href="/quiz">take the quiz</Link>.</p>
   </section>);
   return (<section className="mx-auto max-w-xl pt-8">
     <p className="text-sm text-ink/60">Signed up as {maskEmail(s.email)}</p>
     <h1 className="mt-1 font-serif text-3xl font-bold">You've referred {s.count} {s.count === 1 ? "owner" : "owners"}</h1>
-    <p className="mt-2 text-ink/70">A referral counts when someone signs up (newsletter or quiz) from your link.</p>
+    <p className="mt-2 text-ink/70">A referral counts when someone signs up (The Switchboard or the quiz) from your link.</p>
     <div className="mt-5 rounded-2xl bg-white p-4 shadow-sm"><p className="mb-2 text-sm font-medium">Your link</p>
       <ShareLink link={refLink(s.code)} text="A free directory of real AI agent use cases for small businesses — plus a 3-minute readiness quiz:" /></div>
     <div className="mt-5 space-y-3">

@@ -24,7 +24,7 @@ export default function Unlock({ id, count }: { id: string; count: number }) {
       <div className="absolute inset-0 grid place-items-center p-2">
         <form className="w-full max-w-md rounded-2xl bg-white p-5 shadow-lg" onSubmit={(e) => { e.preventDefault(); unlock(email); }}>
           <p className="font-serif text-lg font-semibold">Unlock your full 5-agent plan</p>
-          <p className="mt-1 text-sm text-ink/70">With copy-paste prompts, setup time and cost for each. We'll also send the daily 5 use cases — unsubscribe any time.</p>
+          <p className="mt-1 text-sm text-ink/70">With copy-paste prompts, setup time and cost for each. You'll also get The Switchboard, our daily email with 5 use cases — unsubscribe any time.</p>
           <div className="mt-3 flex flex-col gap-2 sm:flex-row">
             <input required type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="you@yourbusiness.com" className="flex-1 rounded-xl border border-ink/10 px-4 py-3" aria-label="Email" />
             <button disabled={busy} className="rounded-xl bg-clay-600 px-5 py-3 font-medium text-white">{busy ? "Unlocking…" : "Unlock plan"}</button>

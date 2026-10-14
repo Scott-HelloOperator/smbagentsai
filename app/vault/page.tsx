@@ -11,7 +11,7 @@ export default async function Vault({ searchParams }: { searchParams: { code?: s
     <p className="text-4xl">🔒</p><h1 className="mt-2 font-serif text-3xl font-bold">The Vault</h1>
     <p className="mt-3 text-ink/70">{VAULT.length} premium prompts for owners — weekly brief, cash-crunch triage, price-increase letters and more. Unlocks when {VAULT_AT} people sign up with your referral link.</p>
     {s ? <p className="mt-4">You're at <b>{s.count}/{VAULT_AT}</b>. <Link className="underline" href={`/me?code=${s.code}`}>Get your link →</Link></p>
-       : <p className="mt-4"><Link className="underline" href="/#newsletter">Sign up to get your referral link →</Link></p>}
+       : <p className="mt-4"><Link className="underline" href="/#switchboard">Subscribe to The Switchboard to get your referral link →</Link></p>}
   </section>);
   return (<section className="mx-auto max-w-3xl pt-8">
     <p className="text-sm font-medium text-clay-600">Unlocked ✓</p>

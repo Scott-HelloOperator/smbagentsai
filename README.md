@@ -10,7 +10,7 @@ A free, plain-English directory of real AI agent use cases for small-business ow
 - `/use-case/[slug]` SEO pages (metadata, OpenGraph, HowTo JSON-LD)
 - Landing pages: `/category/[slug]`, `/tool/[slug]`, `/industry/[slug]`
 - `sitemap.xml`, `robots.txt`
-- Newsletter signup (`/api/subscribe` → `subscribers` table; no-op without Supabase)
+- The Switchboard (daily email) signup (`/api/subscribe` → `subscribers` table; no-op without Supabase)
 - `/submit` (→ `submissions` table; no-op without Supabase), `/sponsor`, `/about`, `/help-me`
 - 32 seeded illustrative use cases in `data/use-cases.json` (all `is_example: true`, no sources/people/quotes invented)
 
@@ -67,7 +67,7 @@ GitHub repo → Settings → Secrets and variables → Actions → add: `NEXT_PU
 9 tap questions (~3 min). Scoring and plan matching live in `lib/quiz.ts` (score /100 from tools, response speed, invoicing, documentation, tech comfort, AI usage; plan ranks use cases by time-sink category, industry, tools, and difficulty vs. comfort). Results are stored in `quiz_results`; the share page `/quiz/result/[id]` shows score + #1 pick, the other 4 unlock with email (saved to `subscribers` + `quiz_results.email`). Dynamic OG image at `/quiz/result/[id]/opengraph-image`. Without Supabase the result id encodes the answers so it still works.
 
 ### Referral vault
-Every subscriber gets a `ref_code`; `?ref=code` on any page is remembered for 60 days and credited on signup (newsletter or quiz). Status page: `/me?code=...`.
+Every subscriber gets a `ref_code`; `?ref=code` on any page is remembered for 60 days and credited on signup (The Switchboard or quiz). Status page: `/me?code=...`.
 - 3 referrals → `/vault?code=...` (12-prompt premium pack, `lib/vault.ts`)
 - 10 referrals → "Request free AI audit" → row in `audit_requests` (status `new`). Follow up from Supabase: `select * from audit_requests where status='new';`
 
