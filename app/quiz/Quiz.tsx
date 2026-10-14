@@ -48,11 +48,11 @@ export default function Quiz() {
         {q.opts.map((o) => (
           <button key={o.v} onClick={() => pick(o.v)} aria-pressed={sel(o.v)}
             className={`rounded-2xl border px-4 py-3.5 text-left text-[16px] transition ${sel(o.v) ? "border-clay-600 bg-clay-50 font-medium" : "border-ink/10 bg-white hover:border-ink/30"}`}>
-            {multi && <span className={`mr-2 inline-block h-4 w-4 rounded border align-[-2px] ${sel(o.v) ? "border-clay-600 bg-clay-600" : "border-ink/30"}`} />}{o.label}
+            {multi && <span className={`mr-2 inline-block h-4 w-4 rounded border align-[-2px] ${sel(o.v) ? "border-ink bg-ink" : "border-ink/30"}`} />}{o.label}
           </button>))}
       </div>
       {multi && <button disabled={!((cur as string[]) || []).length || busy} onClick={() => advance(a)}
-        className="mt-5 w-full rounded-2xl bg-clay-600 py-3.5 font-semibold text-white disabled:opacity-40">{busy ? "Scoring…" : step === QUESTIONS.length - 1 ? "See my score" : "Next →"}</button>}
+        className="mt-5 w-full btn w-full !py-3.5 disabled:opacity-40">{busy ? "Scoring…" : step === QUESTIONS.length - 1 ? "See my score" : "Next →"}</button>}
       {busy && !multi && <p className="mt-4 text-center text-ink/60">Scoring…</p>}
     </section>);
 }

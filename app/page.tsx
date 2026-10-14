@@ -4,10 +4,14 @@ import Link from "next/link";
 import Image from "next/image";
 import { Jack } from "@/components/Logo";
 import { getUseCases } from "@/lib/data";
+import { SITE_URL } from "@/lib/taxonomy";
 export const revalidate = 3600;
 export default async function Home() {
   const items = await getUseCases();
+  const ld = [{ "@context": "https://schema.org", "@type": "WebSite", name: "SMB Agents AI", url: SITE_URL },
+    { "@context": "https://schema.org", "@type": "Organization", name: "SMB Agents AI", url: SITE_URL, parentOrganization: { "@type": "Organization", name: "Hello Operator", url: "https://hellooperator.ai" } }];
   return (<>
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ld) }} />
     <section className="pb-4 pt-5 sm:pb-5 sm:pt-8">
       <p className="eyebrow"><Jack size={7} /> For businesses under 200 people</p>
       <h1 className="mt-3 max-w-[17ch] font-serif text-[2rem] sm:max-w-5xl font-semibold leading-[1.04] tracking-[-0.02em] sm:text-[3.25rem]">Real AI agent use cases, sorted by the problem you <em className="font-normal italic">actually</em> have.</h1>
