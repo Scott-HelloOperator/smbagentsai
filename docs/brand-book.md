@@ -2,7 +2,7 @@
 
 > **One line:** a plain-English field guide to AI agents for small-business owners. Editorial, warm, dry. Made by Hello Operator.
 
-**v2 change log:** v1 went too playful (chunky ink outlines, hard drop shadows, mustard highlighter, cute mascot). v2 is editorial: hairline borders, generous whitespace, restrained coral, and a deadpan Gary.
+**v2 change log:** v1 went too playful (chunky ink outlines, hard drop shadows, mustard highlighter, cute mascot). v2 is editorial: hairline borders, generous whitespace, restrained coral, and a deadpan robot mascot. **v2.1:** the old meme series name and catchphrase sign-off are retired; memes are now a broader universe of AI and robots being sarcastic and annoyed at their inept human controllers.
 
 ---
 
@@ -90,9 +90,11 @@ Loaded via `next/font/google` as `--font-display`, `--font-body`, `--font-sig` â
 
 ---
 
-## 8. Gary the AI Intern (v2)
+## 8. The robot mascot & the meme universe (v2.1)
 
-**Who he is:** a deadpan, slightly busted robot built from beige 1990s office hardware. Office-printer energy: technically working, spiritually done. He's the honest voice of every over-promised AI tool, and the only one in the room willing to say the quiet part.
+**The universe:** our memes are a broad world of AIs and robots who are sarcastic, unimpressed, and quietly annoyed at the inept humans running them. No series name, no catchphrase sign-off. The mascot is the anchor character, but any deadpan machine (printers, chatbots, smart fridges, agent swarms) can star.
+
+**The mascot (can be called Gary in light copy):** a deadpan, slightly busted robot built from beige 1990s office hardware. Office-printer energy: technically working, spiritually done. He's the honest voice of every over-promised AI tool, and the only one in the room willing to say the quiet part.
 
 **Look (`gary-v2.png`):** beige CRT/fax head with a cracked screen showing flat-line eyes and a flat mouth; vintage switchboard operator headset with coiled cord (the HO nod); paper-tray slot in his chest with a jammed sheet; duct tape, sticky notes, a dented corner; small coral status light; clipboard. Flat editorial illustration with grain, muted putty/grey palette. **Never cute. Never smiling. No big eyes.**
 
@@ -100,20 +102,20 @@ Loaded via `next/font/google` as `--font-display`, `--font-body`, `--font-sig` â
 1. AI hype, "agent swarms", vendor demos, "fully autonomous" claims
 2. VCs, AI bros, LinkedIn gurus *as archetypes*
 3. The owner's own chaos (shoeboxes, "two weeks", the guy named Dave)
-4. Gary himself
+4. The robots themselves
 
 **Hard lines:** no slurs; no punching at protected groups; nothing about real, named people or companies; no jokes that contradict the site's advice (start small, human in the loop).
 
-**Meme format:** text lives in real fonts, rendered in code (`scripts/gary/make_memes.py`), never AI-rendered.
+**Meme format:** text lives in real fonts, rendered in code (`scripts/memes/make_memes.py`), never AI-rendered.
 - Paper background, 1080px wide. Setup line: Figtree 50px, muted. Punchline: Fraunces 66px semibold, ink.
-- Illustrated Gary scene below, no text in the art.
-- Footer: coral dot + "Oh, Gary." left, "smbagentsai.com" right.
+- Illustrated robot scene below, no text in the art.
+- Footer: coral dot + "Robots, unimpressed." left, "smbagentsai.com" right.
 - **Contractor snort test:** if a GC reading it on a job-site break wouldn't snort, cut it.
 
 ---
 
 ## 9. Assets
 - `/workspace/gary-v2.png`: Gary v2 model sheet (front / side / back)
-- `/workspace/gary-memes-v2-1..4.png`: meme set v2 (#2 is live on the home page as `public/gary/oh-gary-shoebox.webp`)
+- `/workspace/gary-memes-v2-1..4.png`: meme set v2 (#2 is live on the home page as `public/memes/robot-shoebox.webp`)
 - `public/team/scott-mackin.webp|jpg`: Scott's photo, 400px, About sign-off
 - Retired: all v1 Gary art (cute coral robot), illustrated portrait

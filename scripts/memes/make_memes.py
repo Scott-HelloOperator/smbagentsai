@@ -1,4 +1,4 @@
-"""Render "Oh, Gary." memes: real-font captions over illustrated Gary scenes (b1-b4.jpg here). Usage: python3 scripts/gary/make_memes.py scripts/gary <out_dir>"""
+"""Render "Robots, unimpressed." memes: real-font captions over illustrated robot scenes (b1-b4.jpg here). Usage: python3 scripts/gary/make_memes.py scripts/gary <out_dir>"""
 import sys
 from PIL import Image, ImageDraw, ImageFont
 G = "/usr/share/fonts/truetype/sand-box/google/"
@@ -41,7 +41,7 @@ def meme(img_path, setup, punch, out, crop=None):
     im.paste(art, (0, th))
     fy = th + art.height + foot // 2
     d.ellipse((PAD, fy - 9, PAD + 18, fy + 9), fill=CORAL)
-    d.text((PAD + 32, fy), "Oh, Gary.", font=tag_f, fill=INK, anchor="lm")
+    d.text((PAD + 32, fy), "Robots, unimpressed.", font=tag_f, fill=INK, anchor="lm")
     d.text((W - PAD, fy), "smbagentsai.com", font=tag_f, fill=MUTED, anchor="rm")
     im.save(out, optimize=True); print(out, im.size)
 if __name__ == "__main__":
