@@ -50,7 +50,7 @@ async function formsubmit(kind: string, fields: Record<string, unknown>) {
   const target = process.env.FORMSUBMIT_ALIAS || OWNER_EMAIL;
   try {
     const r = await fetch(`https://formsubmit.co/ajax/${encodeURIComponent(target)}`, {
-      method: "POST", headers: { "Content-Type": "application/json", Accept: "application/json", Origin: SITE_URL, Referer: `${SITE_URL}/` },
+      method: "POST", headers: { "Content-Type": "application/json", Accept: "application/json", Origin: SITE_URL, Referer: `${SITE_URL}/contact`, "User-Agent": "Mozilla/5.0 (compatible; SMBAgentsAI-Forms/1.0; +https://smbagentsai.com)" },
       body: JSON.stringify({ _subject: `[smbagentsai] New ${kind} submission`, _template: "table", _captcha: "false", ...Object.fromEntries(Object.entries(fields).map(([k, v]) => [k, typeof v === "string" ? v : JSON.stringify(v)])) }),
     });
     const j = await r.json().catch(() => ({}));

@@ -1,5 +1,7 @@
 "use client";
 import Link from "next/link";
+import ForwardButton from "./ForwardButton";
+import { SITE_URL } from "@/lib/taxonomy";
 import { useState } from "react";
 import type { UseCase } from "@/lib/data";
 import CopyButton from "./CopyButton";
@@ -32,10 +34,10 @@ export default function FlipCard({ u }: { u: UseCase }) {
           </div>
           <p className="mt-2 max-h-24 overflow-y-auto rounded-lg bg-white p-2.5 text-[13px] leading-snug text-ink/80">{u.prompt}</p>
           <CopyButton text={u.prompt} className="mt-2 self-start" />
-          <ol className="mt-3 list-decimal space-y-0.5 pl-5 text-[13px] text-ink/75">{u.steps.slice(0, 3).map((s) => <li key={s}>{s}</li>)}</ol>
+          <ol className="mt-3 list-decimal space-y-0.5 pl-5 text-[13px] text-ink/75">{u.steps.slice(0, 2).map((s) => <li key={s}>{s}</li>)}</ol>
           <div className="mt-auto flex items-end justify-between pt-2">
             <Link href={`/use-case/${u.slug}`} className="text-sm font-medium text-clay-700 underline underline-offset-2">Full guide →</Link>
-            <Link href="/help-me" className="text-[11px] text-ink/40 hover:text-ink/70">Want us to set it up?</Link>
+            <ForwardButton title={u.title} url={`${SITE_URL}/use-case/${u.slug}`} category={u.category} className="max-w-[60%] text-[11px] leading-tight text-ink/50 hover:text-ink" />
           </div>
         </div>
       </div>

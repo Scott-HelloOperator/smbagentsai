@@ -21,5 +21,5 @@ export async function POST(req: Request) {
   if (kind === "submit") { const db = adminClient(); if (db) await db.from("submissions").insert({ name: fields.name || null, email: fields.email, business: fields.business || null, story: fields.story, tools: fields.tools || null, source_url: fields.source_url || null }); }
   const r = await recordForm(req, kind, fields);
   if (!r.stored && !r.delivered) return NextResponse.json({ error: "Could not save. Please email scott@hellooperator.ai." }, { status: 500 });
-  return NextResponse.json({ ok: true });
+  return NextResponse.json({ ok: true, id: r.id, delivered: r.delivered });
 }

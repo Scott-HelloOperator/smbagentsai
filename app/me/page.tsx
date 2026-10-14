@@ -22,13 +22,14 @@ export default async function Me({ searchParams }: { searchParams: { code?: stri
   return (<section className="mx-auto max-w-xl pt-8">
     <p className="text-sm text-ink/60">Signed up as {maskEmail(s.email)}</p>
     <h1 className="mt-1 font-serif text-3xl font-bold">You've referred {s.count} {s.count === 1 ? "owner" : "owners"}</h1>
-    <p className="mt-2 text-ink/70">A referral counts when someone signs up (The Switchboard or the quiz) from your link.</p>
+    <p className="mt-2 text-ink/70">A referral counts when someone new signs up from your link with a real, unique email (and confirms it, once confirmation emails are on). Duplicates, throwaway inboxes and sign-ups from your own network don't count. The robot checks.</p>
+    {s.pending > 0 && <p className="mt-2 text-sm text-ink/60">{s.pending} more waiting on email confirmation.</p>}
     <div className="mt-5 rounded-2xl bg-white p-4 shadow-sm"><p className="mb-2 text-sm font-medium">Your link</p>
       <ShareLink link={refLink(s.code)} text="A free directory of real AI agent use cases for small businesses — plus a 3-minute readiness quiz:" /></div>
     <div className="mt-5 space-y-3">
-      <Milestone n={VAULT_AT} count={s.count} title="The Vault" body="Our premium prompt pack: 12 battle-tested prompts for owners.">
+      <Milestone n={VAULT_AT} count={s.count} title="The Vault" body="Our premium prompt pack: 12 copy-paste prompts for owners (cash crunch, price increases, angry customers).">
         <Link href={`/vault?code=${s.code}`} className="mt-3 inline-block rounded-xl bg-clay-600 px-4 py-2 text-sm font-medium text-white">Open The Vault →</Link></Milestone>
-      <Milestone n={AUDIT_AT} count={s.count} title="Free AI audit" body="A written AI audit of your business, delivered by email as a PDF. No call, no pitch.">
+      <Milestone n={AUDIT_AT} count={s.count} title="Free AI audit" body="A written AI audit of your business, delivered by email as a PDF or short recorded video. No call, no pitch.">
         <AuditButton code={s.code} requested={Boolean(s.audit)} /></Milestone>
     </div>
     {s.quizId && <p className="mt-6 text-sm"><Link className="underline" href={`/quiz/result/${s.quizId}`}>View your quiz result →</Link></p>}
