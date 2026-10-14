@@ -26,23 +26,23 @@ export default async function Page({ searchParams }: { searchParams: { q?: strin
     <PageHead eyebrow="Agent Finder" title="Describe your business. Get your top five."><p>What you do, how big you are, what's driving you up the wall. We'll point you at the five use cases worth trying first. No signup, no sales call, no "let's hop on a quick chat."</p></PageHead>
     <FinderForm initial={q} key={q} />
     {q && !r && <p className="mt-6 rounded-xl border border-ink/10 bg-white p-4 text-[15px] text-ink/70" role="status">That's a bit short for the robot to work with. Try a full sentence: what you do and what's eating your week.</p>}
-    {!r && <section className="mt-8" aria-labelledby="ex"><p id="ex" className="text-sm text-ink/55">Or borrow someone else's problems:</p>
+    {!r && <section className="mt-8" aria-labelledby="ex"><p id="ex" className="text-sm text-ink/70">Or borrow someone else's problems:</p>
       <ul className="mt-2 space-y-2">{EXAMPLES.map((x) => <li key={x}><Link href={`/finder?q=${encodeURIComponent(x)}#results`} className="text-[15px] text-ink/75 underline decoration-ink/20 underline-offset-4 hover:text-ink">“{x}”</Link></li>)}</ul></section>}
     {r && <section id="results" className="mt-10 scroll-mt-24" aria-labelledby="res-h" data-testid="finder-results">
       <h2 id="res-h" className="font-serif text-3xl font-semibold">Your top five</h2>
-      {r.matched ? <p className="mt-2 text-[15px] text-ink/65">Based on: {[...r.industries, ...r.problems, ...r.tools.map((t) => `uses ${t}`), ...(r.solo ? ["one-person shop"] : [])].join(" · ")}</p>
+      {r.matched ? <p className="mt-2 text-[15px] text-ink/70">Based on: {[...r.industries, ...r.problems, ...r.tools.map((t) => `uses ${t}`), ...(r.solo ? ["one-person shop"] : [])].join(" · ")}</p>
         : <p className="mt-2 rounded-xl border-l-2 border-clay-500 bg-white px-4 py-3 text-[15px] text-ink/70" data-testid="finder-fallback">We couldn't place your business exactly (the robot is squinting), so here are the five that help almost everyone. Mention your industry or what's annoying you for sharper picks.</p>}
       <ol className="mt-4 divide-y divide-ink/10 border-y border-ink/10">{r.picks.map((u, i) => (<li key={u.slug}><Link href={`/use-case/${u.slug}`} className="group grid grid-cols-[2.5rem_1fr] gap-3 py-5">
         <span className="font-serif text-3xl font-semibold text-ink/25" aria-hidden>{i + 1}</span>
         <span><span className="text-[11px] font-semibold uppercase tracking-[0.14em] text-clay-700">{u.category}</span>
           <span className="mt-1 block font-serif text-xl font-semibold leading-snug group-hover:underline group-hover:decoration-clay-500 group-hover:underline-offset-4">{u.title}</span>
           <span className="mt-1 block text-[15px] text-ink/70">{u.result}</span>
-          <span className="mt-2 block text-xs text-ink/50">{u.difficulty} · {u.setup_time} · {u.monthly_cost}{u.why.length ? <> · <span className="text-ink/65">why: {u.why.join(", ")}</span></> : null}</span></span></Link></li>))}</ol>
+          <span className="mt-2 block text-xs text-ink/70">{u.difficulty} · {u.setup_time} · {u.monthly_cost}{u.why.length ? <> · <span className="text-ink/70">why: {u.why.join(", ")}</span></> : null}</span></span></Link></li>))}</ol>
       <div className="mt-6 flex flex-col gap-3 rounded-2xl border border-ink/10 bg-white p-5 sm:flex-row sm:items-center sm:justify-between">
-        <div><p className="font-semibold">Share these picks</p><p className="text-sm text-ink/60">The link reopens this exact list.</p></div>
+        <div><p className="font-semibold">Share these picks</p><p className="text-sm text-ink/70">The link reopens this exact list.</p></div>
         <ShareButtons url={shareUrl} title="My top 5 AI agents (via SMB Agents AI)" text="I described my business in one sentence and got my top 5 AI agents to set up first:" compact />
       </div>
-      <p className="mt-6 text-sm text-ink/60">Want a score and a deeper plan? <Link className="underline" href="/quiz">Take the 3-minute quiz</Link>. Or browse <Link className="underline" href="/packs">industry packs</Link>.</p>
+      <p className="mt-6 text-sm text-ink/70">Want a score and a deeper plan? <Link className="underline" href="/quiz">Take the 3-minute quiz</Link>. Or browse <Link className="underline" href="/packs">industry packs</Link>.</p>
     </section>}
     <Switchboard />
   </article>);

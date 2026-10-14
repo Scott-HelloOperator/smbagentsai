@@ -10,7 +10,7 @@ export default function FinderForm({ initial = "" }: { initial?: string }) {
       className="w-full rounded-2xl border border-ink/15 bg-white px-5 py-4 text-[17px] leading-relaxed outline-none focus:border-ink/50 focus:ring-2 focus:ring-clay-100" />
     <div className="mt-3 flex flex-wrap items-center gap-3">
       <button className="btn" disabled={busy || tooShort} data-testid="finder-go">{busy ? "Finding…" : "Find my 5 agents"}</button>
-      <span className="text-sm text-ink/55">{tooShort && text ? "A little more detail, please. What do you do, and what's annoying you?" : "No signup. Nothing stored. The link is shareable."}</span>
+      <span className="text-sm text-ink/70">{tooShort && text ? "A little more detail, please. What do you do, and what's annoying you?" : "No signup. Nothing stored. The link is shareable."}</span>
     </div>
   </form>);
 }

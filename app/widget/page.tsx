@@ -15,6 +15,6 @@ export default function Widget() {
         <div className="mt-4 rounded-xl border border-ink/10 bg-white p-3"><div className="flex items-start justify-between gap-3"><code className="block break-all text-[12.5px] leading-relaxed text-ink/75">{code(t)}</code><CopyButton text={code(t)} label="Copy code" /></div></div>
       </section>))}
     </div>
-    <p className="mt-8 text-sm text-ink/55">Rotates every Monday. Links open on smbagentsai.com in a new tab. Want a custom version for your members? <a className="underline" href="/contact">Ask us</a>.</p>
+    <p className="mt-8 text-sm text-ink/70">Rotates every Monday. Links open on smbagentsai.com in a new tab. Want a custom version for your members? <a className="underline" href="/contact">Ask us</a>.</p>
   </article>);
 }

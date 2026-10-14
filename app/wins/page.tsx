@@ -17,20 +17,20 @@ export default async function Wins() {
         {wins.length ? <ol className="divide-y divide-ink/10 border-y border-ink/10">{wins.map((w) => (<li key={w.id} className="py-6">
           <h2 className="font-serif text-2xl font-semibold leading-snug">{w.title}</h2>
           <p className="mt-2 whitespace-pre-line text-[16px] leading-relaxed text-ink/80">{w.story}</p>
-          <p className="mt-3 text-sm text-ink/60">— {w.credit_url ? <a className="font-medium text-ink underline decoration-clay-500 underline-offset-4" href={w.credit_url} rel="noopener ugc" target="_blank">{w.name}{w.business ? `, ${w.business}` : ""}</a> : <span className="font-medium text-ink">{w.name}{w.business ? `, ${w.business}` : ""}</span>}
+          <p className="mt-3 text-sm text-ink/70">— {w.credit_url ? <a className="font-medium text-ink underline decoration-clay-500 underline-offset-4" href={w.credit_url} rel="noopener ugc" target="_blank">{w.name}{w.business ? `, ${w.business}` : ""}</a> : <span className="font-medium text-ink">{w.name}{w.business ? `, ${w.business}` : ""}</span>}
             {w.tools && <> · {w.tools}</>}{w.hours_saved && <> · saves {w.hours_saved}</>}</p>
         </li>))}</ol>
         : <div className="rounded-2xl border border-dashed border-ink/20 p-8 text-center"><p className="font-serif text-2xl font-semibold">The wall is empty. For now.</p>
-            <p className="mx-auto mt-2 max-w-md text-ink/65">Be the first owner on it. The robot has been staring at this blank space all week and it's getting weird.</p></div>}
+            <p className="mx-auto mt-2 max-w-md text-ink/70">Be the first owner on it. The robot has been staring at this blank space all week and it's getting weird.</p></div>}
         <aside className="mt-8 rounded-2xl bg-ink p-6 text-cream">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-cream/60">Coming soon</p>
+          <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-cream/75">Coming soon</p>
           <p className="mt-2 font-serif text-2xl font-semibold">The Wins Contest</p>
           <p className="mt-2 text-[15px] leading-relaxed text-cream/75">Sponsor-funded prizes for the most useful owner win each month. Judged by humans on one question: could another owner copy this on Monday? Wins posted now will be eligible.</p>
         </aside>
       </section>
       <section aria-labelledby="post-win" className="lg:sticky lg:top-24 lg:self-start">
         <h2 id="post-win" className="font-serif text-2xl font-semibold">Post your win</h2>
-        <p className="mt-1 text-sm text-ink/60">Short and specific beats long and vague. We may edit lightly for clarity.</p>
+        <p className="mt-1 text-sm text-ink/70">Short and specific beats long and vague. We may edit lightly for clarity.</p>
         <div className="mt-4"><Form kind="win" endpoint="/api/wins" submit="Submit for review" done={<><p className="font-semibold text-ink">Thanks! It's in the review queue.</p><p className="mt-1">A human reads it, usually within a few days. If it goes up, we'll email you.</p></>}
           fields={[{ name: "name", label: "Your name (as credited)", required: true }, { name: "business", label: "Business name" }, { name: "email", label: "Email (never shown)", type: "email", required: true },
             { name: "credit_url", label: "Credit link", type: "url", placeholder: "https://yourbusiness.com" }, { name: "title", label: "Headline", required: true, placeholder: "Stopped chasing invoices by phone" },

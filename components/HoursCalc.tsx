@@ -19,10 +19,10 @@ export default function HoursCalc({ c }: { c: Calc }) {
       </div>
       <div className="rounded-2xl bg-cream p-5 text-center sm:w-56">
         <p className="font-serif text-5xl font-semibold tabular-nums" data-testid="calc-hours">{n(hours)}</p>
-        <p className="text-sm text-ink/60">hours back per month</p>
+        <p className="text-sm text-ink/70">hours back per month</p>
         <p className="mt-3 border-t border-ink/10 pt-3 text-sm"><b className="tabular-nums">${n(value)}</b>/mo of your time</p>
       </div>
     </div>
-    <p className="mt-4 text-xs leading-relaxed text-ink/55">Assumes the setup removes about {Math.round(c.share * 100)}% of the manual time. {c.note} Your numbers, your call. The robot refuses to promise anything.</p>
+    <p className="mt-4 text-xs leading-relaxed text-ink/70">Assumes the setup removes about {Math.round(c.share * 100)}% of the manual time. {c.note} Your numbers, your call. The robot refuses to promise anything.</p>
   </section>);
 }

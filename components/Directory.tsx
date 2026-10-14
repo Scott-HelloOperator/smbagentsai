@@ -32,14 +32,15 @@ export default function Directory({ items, initial = {} }: { items: UseCase[]; i
         </select>
       </div>
       </div>
-      <div className="-mx-4 mt-3 flex gap-2 overflow-x-auto px-4 pb-1" role="list">
+      <div className="-mx-4 mt-3 flex gap-2 overflow-x-auto px-4 pb-1">
         {["", ...CATEGORIES].map((c) => (
           <button key={c || "all"} onClick={() => setCat(c)} className={`chip ${cat === c ? "!border-ink !bg-ink text-cream" : "hover:border-ink/30"}`}>{c || "All"}</button>
         ))}
       </div>
-      <p className="mt-2 text-sm text-ink/60" aria-live="polite">{list.length} use case{list.length === 1 ? "" : "s"}</p>
+      <p className="mt-2 text-sm text-ink/70" aria-live="polite">{list.length} use case{list.length === 1 ? "" : "s"}</p>
+      <h2 className="sr-only">Use cases</h2>
       <div className="mt-2 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">{list.map((u) => <FlipCard key={u.slug} u={u} />)}</div>
-      {!list.length && <p className="mt-8 rounded-xl bg-white p-6 text-center text-ink/60">Nothing matches yet. Try clearing a filter — or <a href="/submit" className="underline">tell us what you need</a>.</p>}
+      {!list.length && <p className="mt-8 rounded-xl bg-white p-6 text-center text-ink/70">Nothing matches yet. Try clearing a filter — or <a href="/submit" className="underline">tell us what you need</a>.</p>}
     </section>
   );
 }

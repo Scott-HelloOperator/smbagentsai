@@ -23,7 +23,7 @@ export default function Switchboard() {
           <p className="font-medium">Share your link: 3 friends unlock <b>The Vault</b> (premium prompt pack), 10 get you a <b>free AI audit</b>.</p>
           <div className="mt-3"><ShareLink link={res.link} text="Found a free directory of real AI agent use cases for small businesses:" /></div>
           <div className="mt-3 flex gap-4 text-sm"><Link href={`/me?code=${res.code}`} className="underline">Track your referrals →</Link><Link href="/switchboard" className="underline">Read past issues</Link></div>
-          <p className="mt-1 text-xs text-ink/50">Bookmark that page. It's how you get back to your rewards. Referrals count once your friends confirm their email.</p>
+          <p className="mt-1 text-xs text-ink/70">Bookmark that page. It's how you get back to your rewards. Referrals count once your friends confirm their email.</p>
         </div>}
       </div>) : (
         <form className="mt-8 flex flex-col gap-2 sm:flex-row" onSubmit={async (e) => { e.preventDefault(); setState("loading");

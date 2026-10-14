@@ -39,7 +39,7 @@ export default function Unlock({ id, count }: { id: string; count: number }) {
         <p className="text-xs font-semibold uppercase tracking-wide text-clay-700">#{i + 1} · {u.category}</p>
         <Link href={`/use-case/${u.slug}`} className="mt-1 block font-serif text-lg font-semibold hover:underline">{u.title}</Link>
         <p className="text-sm text-ink/70">{u.result}</p>
-        <p className="mt-2 text-xs text-ink/60">{u.difficulty} · {u.setup_time} · {u.monthly_cost} · {u.tools.join(", ")}</p>
+        <p className="mt-2 text-xs text-ink/70">{u.difficulty} · {u.setup_time} · {u.monthly_cost} · {u.tools.join(", ")}</p>
         <div className="mt-2 flex items-center gap-3"><CopyButton text={u.prompt} /><Link href={`/use-case/${u.slug}`} className="text-sm underline">Full guide</Link></div>
       </div>))}
     {ref.link && <div className="rounded-2xl border border-ink/10 bg-[#F4EDE2] p-4">
@@ -47,6 +47,6 @@ export default function Unlock({ id, count }: { id: string; count: number }) {
       <div className="mt-2"><ShareLink link={ref.link} text="This free 3-minute quiz shows which AI agents fit your business:" /></div>
       <Link href={`/me?code=${ref.code}`} className="mt-2 inline-block text-sm underline">Track your referrals →</Link>
     </div>}
-    <p className="pt-2 text-center"><Link href="/help-me" className="text-xs text-ink/40 hover:text-ink/70">Want us to set these up?</Link></p>
+    <p className="pt-2 text-center"><Link href="/help-me" className="text-xs text-ink/70 hover:text-ink/70">Want us to set these up?</Link></p>
   </div>);
 }

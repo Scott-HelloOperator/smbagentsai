@@ -6,7 +6,7 @@ export default function Logo({ className = "" }: { className?: string }) {
   return (<span className={`inline-flex shrink-0 items-center gap-2 whitespace-nowrap ${className}`}>
     <Jack size={11} />
     <span className="font-serif text-[1.2rem] font-semibold leading-none tracking-tight sm:text-[1.3rem]">
-      SMB Agents <span className="font-sans text-[0.72em] font-semibold tracking-[0.12em] text-ink/55">AI</span>
+      SMB Agents <span className="font-sans text-[0.72em] font-semibold tracking-[0.12em] text-ink/70">AI</span>
     </span>
   </span>);
 }

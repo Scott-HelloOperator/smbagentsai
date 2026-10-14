@@ -10,6 +10,6 @@ export default function Help() {
     <div className="mt-8"><Form kind="help" submit="Send" done={<><p className="font-semibold text-ink">Thanks. We'll be in touch by email.</p><p className="mt-1">No pushy follow-up sequence. We'd be embarrassed.</p></>}
       fields={[{ name: "name", label: "Your name", required: true }, { name: "email", label: "Email", type: "email", required: true }, { name: "business", label: "Business & industry" },
         { name: "message", label: "What do you want automated?", type: "textarea", required: true, placeholder: "e.g. Chasing overdue invoices in QuickBooks without me doing it" }]} /></div>
-    <p className="mt-6 text-sm text-ink/55">Not required, never pushed. The directory stays free either way.</p>
+    <p className="mt-6 text-sm text-ink/70">Not required, never pushed. The directory stays free either way.</p>
   </article>);
 }

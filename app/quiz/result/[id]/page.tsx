@@ -21,7 +21,7 @@ export default async function Page({ params }: { params: { id: string } }) {
       <p className="eyebrow">AI Readiness Quiz result</p>
       <div className="mt-3 flex items-center gap-5 rounded-3xl bg-white p-6 border border-ink/10">
         <div className="relative grid h-28 w-28 shrink-0 place-items-center rounded-full" style={{ background: `conic-gradient(#ED7347 ${q.score * 3.6}deg, #F3E8DE 0)` }}>
-          <div className="grid h-[88px] w-[88px] place-items-center rounded-full bg-white text-center"><span className="font-serif text-3xl font-semibold">{q.score}</span><span className="-mt-2 text-xs text-ink/50">/ 100</span></div>
+          <div className="grid h-[88px] w-[88px] place-items-center rounded-full bg-white text-center"><span className="font-serif text-3xl font-semibold">{q.score}</span><span className="-mt-2 text-xs text-ink/70">/ 100</span></div>
         </div>
         <div><h1 className="font-serif text-2xl font-semibold">{v.label}</h1><p className="mt-1 text-ink/70">{v.line}</p></div>
       </div>

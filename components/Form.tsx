@@ -23,7 +23,7 @@ export default function Form({ kind, fields, submit = "Send", done, endpoint = "
     }}>
       {fields.map((f) => (
         <label key={f.name} className="block">
-          <span className="mb-1 block text-sm font-medium text-ink/75">{f.label}{f.required && <span className="text-clay-600"> *</span>}</span>
+          <span className="mb-1 block text-sm font-medium text-ink/75">{f.label}{f.required && <span className="text-clay-700"> *</span>}</span>
           {f.type === "textarea" ? <textarea name={f.name} required={f.required} rows={f.rows || 5} placeholder={f.placeholder} className={inputCls} />
             : f.type === "select" ? <select name={f.name} required={f.required} className={inputCls} defaultValue=""><option value="" disabled>Choose one</option>{f.options!.map((o) => <option key={o}>{o}</option>)}</select>
             : <input name={f.name} type={f.type || "text"} required={f.required} placeholder={f.placeholder} className={inputCls} />}
@@ -32,7 +32,7 @@ export default function Form({ kind, fields, submit = "Send", done, endpoint = "
       <input name="hp" tabIndex={-1} autoComplete="off" aria-hidden className="hidden" />
       <div className="flex items-center gap-3 pt-1">
         <button disabled={state === "loading"} className="btn">{state === "loading" ? "Sending…" : submit}</button>
-        <p className="text-xs text-ink/50">Goes straight to Scott. No list, no spam.</p>
+        <p className="text-xs text-ink/70">Goes straight to Scott. No list, no spam.</p>
       </div>
       {state === "err" && <p role="alert" className="text-sm text-clay-700">{msg}</p>}
     </form>

@@ -14,7 +14,7 @@ export default async function Vault({ searchParams }: { searchParams: { code?: s
        : <p className="mt-4"><Link className="underline" href="/#switchboard">Subscribe to The Switchboard to get your referral link →</Link></p>}
   </section>);
   return (<section className="mx-auto max-w-3xl pt-8">
-    <p className="text-sm font-medium text-clay-600">Unlocked ✓</p>
+    <p className="text-sm font-medium text-clay-700">Unlocked ✓</p>
     <h1 className="font-serif text-3xl font-semibold">The Vault</h1>
     <p className="mt-2 text-ink/70">Replace anything in [brackets]. Thanks for spreading the word.</p>
     <div className="mt-6 space-y-4">{VAULT.map((v, i) => (<div key={v.t} className="rounded-2xl bg-white p-5 border border-ink/10">

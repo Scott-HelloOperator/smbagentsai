@@ -17,7 +17,7 @@ export default async function Thanks({ searchParams }: { searchParams: { i?: str
     <h1 className="mt-4 font-serif text-4xl font-semibold">{v ? "Vote counted. Thank you." : "Hmm, that vote didn't go through."}</h1>
     <p className="mt-3 text-[17px] text-ink/70">{LINES[v] || "The link may be old or mangled by your email app. Try again from the issue page."}</p>
     {total > 0 && <div className="mx-auto mt-8 max-w-sm space-y-2 text-left text-sm">{RATINGS.map((r) => { const c = tally[r.v] || 0; return (
-      <div key={r.v}><div className="flex justify-between"><span>{r.e} {r.label}</span><span className="text-ink/55">{Math.round((c / total) * 100)}%</span></div>
+      <div key={r.v}><div className="flex justify-between"><span>{r.e} {r.label}</span><span className="text-ink/70">{Math.round((c / total) * 100)}%</span></div>
         <div className="mt-1 h-1.5 rounded-full bg-ink/5"><div className="h-full rounded-full bg-ink" style={{ width: `${(c / total) * 100}%` }} /></div></div>); })}</div>}
     <div className="mt-10 flex justify-center gap-4 text-sm">{issue && <Link className="underline" href={`/switchboard/${n}`}>Back to the issue</Link>}<Link className="underline" href="/">Browse use cases</Link></div>
   </article>);
