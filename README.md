@@ -62,6 +62,9 @@ Local dry run (no keys needed; prints candidates, writes nothing): `node scripts
 
 GitHub repo → Settings → Secrets and variables → Actions → add: `NEXT_PUBLIC_SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`, `REVALIDATE_SECRET` (same value as in Vercel), and `OPENAI_API_KEY` **or** `ANTHROPIC_API_KEY`. Apply `supabase/migrations/0002_engine.sql` first.
 
+### Safety box ("Before you switch it on")
+Every use case carries a required `safety` object (`whatCanGoWrong`, `whenToStop`, `humanHandoff`: one specific sentence each) and a `reads_untrusted_content` boolean (agent reads email/inboxes/DMs/texts/tickets/reviews/forms/web pages from outsiders, so it gets a prompt-injection flag). Type: `UseCaseSafety` in `lib/data.ts`. UI: `components/SafetyBox.tsx` (card back + detail page). Enforced three ways: the engine gate `scripts/engine/safety.mjs` (run inside `validate()`; 30-120 chars, one sentence, no numbers/filler, fields must differ, flag must be boolean and true when the post describes reading outside messages), the LLM prompt (`SAFETY_RULES`), and a NOT NULL + check constraint in `supabase/migrations/0005_use_case_safety.sql`, which also backfills every existing card. Apply 0005 before deploying code that reads these fields.
+
 ## Growth features
 ### AI Readiness Quiz (`/quiz`)
 9 tap questions (~3 min). Scoring and plan matching live in `lib/quiz.ts` (score /100 from tools, response speed, invoicing, documentation, tech comfort, AI usage; plan ranks use cases by time-sink category, industry, tools, and difficulty vs. comfort). Results are stored in `quiz_results`; the share page `/quiz/result/[id]` shows score + #1 pick, the other 4 unlock with email (saved to `subscribers` + `quiz_results.email`). Dynamic OG image at `/quiz/result/[id]/opengraph-image`. Without Supabase the result id encodes the answers so it still works.

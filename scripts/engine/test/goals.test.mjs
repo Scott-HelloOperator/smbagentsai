@@ -4,7 +4,8 @@ import { goalErrors } from "../goals.mjs";
 import { validate } from "../llm.mjs";
 const SRC = "We set up QuickBooks reminders. The owner says overdue invoices went from 40 to 25 in two months.";
 const base = { accept: true, title: "Chase invoices", category: "Get paid faster", summary: "An owner automated reminders.", what_they_did: "Set up reminders.", how_it_went: "Reminders go out on time.",
-  worth_knowing: "Review the tone.", prompt: "Write a reminder for [customer].", steps: ["a", "b", "c"], difficulty: "No-code", evidence: ["We set up QuickBooks reminders"], tools: [], industries: [] };
+  worth_knowing: "Review the tone.", prompt: "Write a reminder for [customer].", steps: ["a", "b", "c"], difficulty: "No-code", evidence: ["We set up QuickBooks reminders"], tools: [], industries: [],
+  safety: { whatCanGoWrong: "It nudges a customer who already paid their invoice.", whenToStop: "Pause it if a customer says they paid and still got a reminder.", humanHandoff: "Any customer who replies to a reminder comes to you." }, reads_untrusted_content: false };
 test("goal-phrased result passes", () => assert.deepEqual(goalErrors({ ...base, result: "Goal: every overdue invoice gets a nudge" }, SRC), []));
 test("rejects unsourced stat in result", () => assert.ok(goalErrors({ ...base, result: "Overdue invoices drop by about a third in 60 days" }, SRC).length >= 2));
 test("rejects percentage in result even if prefixed", () => assert.ok(goalErrors({ ...base, result: "Goal: cut overdue invoices 30%" }, SRC).some((e) => /number/.test(e))));

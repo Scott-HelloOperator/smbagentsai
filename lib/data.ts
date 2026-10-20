@@ -1,12 +1,25 @@
 import seed from "@/data/use-cases.json";
 import { createClient } from "@supabase/supabase-js";
 
+/** "Before you switch it on" box. Required on every card; enforced by the DB check constraint (0005) and scripts/engine/safety.mjs. */
+export type UseCaseSafety = {
+  /** One sentence: the concrete failure for this workflow. */
+  whatCanGoWrong: string;
+  /** One sentence: the signal to pause or turn it off. */
+  whenToStop: string;
+  /** One sentence: where a person takes over. */
+  humanHandoff: string;
+};
+
 export type UseCase = {
   slug: string; title: string; category: string; result: string; summary: string;
   what_they_did: string; how_it_went: string; worth_knowing: string; prompt: string; steps: string[];
   video_url: string | null; tools: string[]; agent: string; industries: string[];
   difficulty: "No-code" | "Light setup" | "Needs help"; setup_time: string; monthly_cost: string; impact: string;
   source_url: string | null; published_at: string; is_example: boolean;
+  safety: UseCaseSafety;
+  /** True when the agent reads content written by outsiders (email, inbox, DMs/texts, tickets, reviews, forms, web pages): prompt-injection risk. */
+  reads_untrusted_content: boolean;
 };
 
 const url = process.env.NEXT_PUBLIC_SUPABASE_URL, anon = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;

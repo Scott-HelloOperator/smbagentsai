@@ -33,6 +33,12 @@
     "setup_time": "2-3 hours",
     "monthly_cost": "$20-$50",
     "impact": "High",
+    "safety": {
+      "whatCanGoWrong": "It nudges a customer who already paid, or sends a firm notice to one on an agreed payment plan.",
+      "whenToStop": "Pause it if a customer says they've paid or are on a plan and still got a reminder.",
+      "humanHandoff": "Any customer who replies, and anything past your firm stage, comes to you."
+    },
+    "reads_untrusted_content": false,
     "source_url": null,
     "published_at": "2026-10-13",
     "is_example": true
@@ -70,6 +76,12 @@
     "setup_time": "1 hour",
     "monthly_cost": "$0-$30",
     "impact": "High",
+    "safety": {
+      "whatCanGoWrong": "The invoice goes out with the wrong amount, or before the job is actually finished.",
+      "whenToStop": "Pause it if a customer gets a link for a job still in progress, or gets two links for one job.",
+      "humanHandoff": "Disputed amounts, discounts and refunds are handled by you or the office, not the automation."
+    },
+    "reads_untrusted_content": false,
     "source_url": null,
     "published_at": "2026-10-12",
     "is_example": true
@@ -107,6 +119,12 @@
     "setup_time": "3-4 hours",
     "monthly_cost": "$10-$40",
     "impact": "Medium",
+    "safety": {
+      "whatCanGoWrong": "It matches a payout to the wrong invoice when amounts look alike, which can hide a missing payment.",
+      "whenToStop": "Stop auto-matching if your books and Stripe disagree at month-end.",
+      "humanHandoff": "Anything unmatched goes to your bookkeeper; don't let it mark an invoice paid on a guess."
+    },
+    "reads_untrusted_content": false,
     "source_url": null,
     "published_at": "2026-10-11",
     "is_example": true
@@ -144,6 +162,12 @@
     "setup_time": "Half a day",
     "monthly_cost": "$97-$297",
     "impact": "High",
+    "safety": {
+      "whatCanGoWrong": "It offers a booking time that's already taken, or answers a pricing question it shouldn't.",
+      "whenToStop": "Pause it if leads get double-booked, or keep asking to speak to someone real.",
+      "humanHandoff": "When a lead asks for a quote, a person or anything off-script, a human takes over the thread."
+    },
+    "reads_untrusted_content": true,
     "source_url": null,
     "published_at": "2026-10-10",
     "is_example": true
@@ -180,6 +204,12 @@
     "setup_time": "1-2 hours",
     "monthly_cost": "$97+",
     "impact": "High",
+    "safety": {
+      "whatCanGoWrong": "It promises a callback time or price you can't meet, or keeps texting someone who replied stop.",
+      "whenToStop": "Pause it if a caller complains about the texts, or an urgent job sits unanswered in the thread.",
+      "humanHandoff": "Once the job details are in, a person calls back; emergencies get flagged to you straight away."
+    },
+    "reads_untrusted_content": true,
     "source_url": null,
     "published_at": "2026-10-09",
     "is_example": true
@@ -215,6 +245,12 @@
     "setup_time": "2-3 hours",
     "monthly_cost": "Included in HubSpot paid tiers",
     "impact": "Medium",
+    "safety": {
+      "whatCanGoWrong": "It scores a good lead low because a form field was blank, or routes it to someone who's away.",
+      "whenToStop": "Pause routing if reps keep reassigning its picks, or a lead sits untouched for days.",
+      "humanHandoff": "Sales reviews the low-scored leads every week; nobody is dropped on its score alone."
+    },
+    "reads_untrusted_content": true,
     "source_url": null,
     "published_at": "2026-10-08",
     "is_example": true
@@ -254,6 +290,12 @@
     "setup_time": "1 hour",
     "monthly_cost": "$20-$30",
     "impact": "Medium",
+    "safety": {
+      "whatCanGoWrong": "A reply confirms private details about a customer, or sounds defensive about a fair complaint.",
+      "whenToStop": "Pause it if a draft ever mentions an order, visit or name the reviewer didn't share publicly.",
+      "humanHandoff": "You approve every reply and write the ones to angry or detailed negative reviews yourself."
+    },
+    "reads_untrusted_content": true,
     "source_url": null,
     "published_at": "2026-10-07",
     "is_example": true
@@ -291,6 +333,12 @@
     "setup_time": "2 hours",
     "monthly_cost": "$20-$50",
     "impact": "High",
+    "safety": {
+      "whatCanGoWrong": "It sends a review link to someone who complained, or takes a sarcastic \"great job\" at face value.",
+      "whenToStop": "Pause it if an unhappy customer says they got a review request right after complaining.",
+      "humanHandoff": "Every unhappy or unclear reply goes to the owner, who calls back the same day."
+    },
+    "reads_untrusted_content": true,
     "source_url": null,
     "published_at": "2026-10-06",
     "is_example": true
@@ -328,6 +376,12 @@
     "setup_time": "Half a day",
     "monthly_cost": "$0-$50",
     "impact": "Medium",
+    "safety": {
+      "whatCanGoWrong": "It quotes a price or policy wrong, or makes up an answer when your FAQ doesn't cover the question.",
+      "whenToStop": "Pause it if a customer holds you to something it said that isn't your policy.",
+      "humanHandoff": "Refunds, complaints and anything outside the FAQ go to a person, with the chat attached."
+    },
+    "reads_untrusted_content": true,
     "source_url": null,
     "published_at": "2026-10-05",
     "is_example": true
@@ -364,6 +418,12 @@
     "setup_time": "1-2 days",
     "monthly_cost": "$20-$100",
     "impact": "High",
+    "safety": {
+      "whatCanGoWrong": "It sends a tech to a job they aren't qualified for, or ignores a customer's time window.",
+      "whenToStop": "Stop using its plan once the dispatcher is rewriting most of it every evening.",
+      "humanHandoff": "The dispatcher approves the schedule each night and handles every same-day change."
+    },
+    "reads_untrusted_content": false,
     "source_url": null,
     "published_at": "2026-10-04",
     "is_example": true
@@ -402,6 +462,12 @@
     "setup_time": "1-2 hours",
     "monthly_cost": "$10-$20",
     "impact": "Medium",
+    "safety": {
+      "whatCanGoWrong": "It moves an appointment into time you blocked off, or confirms a change the client didn't ask for.",
+      "whenToStop": "Turn off the AI replies if a client misses an appointment because of a change it made.",
+      "humanHandoff": "Refunds, complaints, late-cancel fees and anything urgent go to a person."
+    },
+    "reads_untrusted_content": true,
     "source_url": null,
     "published_at": "2026-10-03",
     "is_example": true
@@ -439,6 +505,12 @@
     "setup_time": "2-3 hours",
     "monthly_cost": "$20-$50",
     "impact": "Medium",
+    "safety": {
+      "whatCanGoWrong": "It books two people into one slot, or reads \"yes, but could it be later?\" as a yes.",
+      "whenToStop": "Pause it the first time someone turns up for a slot that's already taken.",
+      "humanHandoff": "Unclear replies, and anyone asking about price or a different service, go to the front desk."
+    },
+    "reads_untrusted_content": true,
     "source_url": null,
     "published_at": "2026-10-02",
     "is_example": true
@@ -476,6 +548,12 @@
     "setup_time": "1 hour",
     "monthly_cost": "$20",
     "impact": "Medium",
+    "safety": {
+      "whatCanGoWrong": "It marks down a strong candidate over formatting, or repeats a bias baked into your past hires.",
+      "whenToStop": "Pause it if its scores keep disagreeing with yours, or it cites things not in the application.",
+      "humanHandoff": "You read every low-scored application before rejecting it; every hiring decision is yours."
+    },
+    "reads_untrusted_content": true,
     "source_url": null,
     "published_at": "2026-10-01",
     "is_example": true
@@ -512,6 +590,12 @@
     "setup_time": "30 minutes",
     "monthly_cost": "$0-$20",
     "impact": "Medium",
+    "safety": {
+      "whatCanGoWrong": "It inflates the role, or adds a requirement or perk you don't actually offer.",
+      "whenToStop": "Rewrite it by hand if applicants keep arriving with the wrong idea about pay or hours.",
+      "humanHandoff": "You confirm pay, schedule and any legal wording before the post goes up."
+    },
+    "reads_untrusted_content": false,
     "source_url": null,
     "published_at": "2026-09-30",
     "is_example": true
@@ -549,6 +633,12 @@
     "setup_time": "Half a day",
     "monthly_cost": "$20-$30 per user",
     "impact": "Medium",
+    "safety": {
+      "whatCanGoWrong": "It answers with an outdated policy, or guesses where the handbook says nothing.",
+      "whenToStop": "Pause it if a new hire acts on an answer about pay, leave or safety that turns out to be wrong.",
+      "humanHandoff": "Questions about pay, benefits, safety or complaints go to a manager, not the assistant."
+    },
+    "reads_untrusted_content": false,
     "source_url": null,
     "published_at": "2026-09-29",
     "is_example": true
@@ -585,6 +675,12 @@
     "setup_time": "1 hour",
     "monthly_cost": "Included in QuickBooks plans",
     "impact": "Medium",
+    "safety": {
+      "whatCanGoWrong": "It files a personal or equipment purchase in the wrong category, or misses a duplicate charge.",
+      "whenToStop": "Turn off auto-accept if your bookkeeper keeps undoing its categories.",
+      "humanHandoff": "Flagged and unusual charges go to you or your bookkeeper; it never disputes or deletes anything itself."
+    },
+    "reads_untrusted_content": false,
     "source_url": null,
     "published_at": "2026-09-28",
     "is_example": true
@@ -623,6 +719,12 @@
     "setup_time": "2-3 hours",
     "monthly_cost": "$10-$30",
     "impact": "High",
+    "safety": {
+      "whatCanGoWrong": "It reports a balance from a feed that hasn't synced, or misses a large bill due that week.",
+      "whenToStop": "Stop leaning on it if a summary doesn't match your bank balance when you spot-check.",
+      "humanHandoff": "Decisions about payroll, borrowing or delaying a bill come from you or your bookkeeper, not the summary."
+    },
+    "reads_untrusted_content": false,
     "source_url": null,
     "published_at": "2026-09-27",
     "is_example": true
@@ -661,6 +763,12 @@
     "setup_time": "1 hour",
     "monthly_cost": "$20-$60",
     "impact": "Medium",
+    "safety": {
+      "whatCanGoWrong": "It misreads an amount or due date, or books a fake invoice dressed up as a real supplier's.",
+      "whenToStop": "Pause it if a draft bill doesn't match the PDF, or a supplier's bank details suddenly change.",
+      "humanHandoff": "Someone approves every draft bill before it's paid and confirms any new bank details by phone."
+    },
+    "reads_untrusted_content": true,
     "source_url": null,
     "published_at": "2026-09-26",
     "is_example": true
@@ -697,6 +805,12 @@
     "setup_time": "Half a day",
     "monthly_cost": "$20-$50",
     "impact": "High",
+    "safety": {
+      "whatCanGoWrong": "It mishears a dictated measurement, or prices a line from an outdated price book.",
+      "whenToStop": "Pause it if an estimate goes out that you later have to honor at a loss.",
+      "humanHandoff": "The tech or owner checks quantities and the total before any estimate reaches the customer."
+    },
+    "reads_untrusted_content": false,
     "source_url": null,
     "published_at": "2026-09-25",
     "is_example": true
@@ -735,6 +849,12 @@
     "setup_time": "1 hour",
     "monthly_cost": "$0-$20",
     "impact": "Medium",
+    "safety": {
+      "whatCanGoWrong": "One wrong date in the sheet and the reminder arrives too late, or not at all.",
+      "whenToStop": "If anything lapses without a reminder, stop and re-check every date in the sheet.",
+      "humanHandoff": "Each renewal has a named owner; the reminder tells them, it doesn't renew anything."
+    },
+    "reads_untrusted_content": false,
     "source_url": null,
     "published_at": "2026-09-24",
     "is_example": true
@@ -772,6 +892,12 @@
     "setup_time": "15 minutes",
     "monthly_cost": "$20",
     "impact": "Medium",
+    "safety": {
+      "whatCanGoWrong": "The summary misses an auto-renewal, a personal guarantee or a liability clause tucked into the fine print.",
+      "whenToStop": "Stop relying on it if a summary ever contradicts the contract when you check a clause yourself.",
+      "humanHandoff": "A lawyer reviews anything high-value, long-term or carrying personal liability before you sign."
+    },
+    "reads_untrusted_content": false,
     "source_url": null,
     "published_at": "2026-09-23",
     "is_example": true
@@ -809,6 +935,12 @@
     "setup_time": "30 minutes",
     "monthly_cost": "$20-$30",
     "impact": "High",
+    "safety": {
+      "whatCanGoWrong": "It files a real complaint under FYI, or drafts a reply agreeing to something you wouldn't.",
+      "whenToStop": "Pause it if an urgent email turns up in FYI or Junk, or it drafts a polite reply to phishing.",
+      "humanHandoff": "You send every reply yourself; anything about money, contracts or staff stays with you."
+    },
+    "reads_untrusted_content": true,
     "source_url": null,
     "published_at": "2026-09-22",
     "is_example": true
@@ -847,6 +979,12 @@
     "setup_time": "30 minutes",
     "monthly_cost": "$10-$30 per user",
     "impact": "Medium",
+    "safety": {
+      "whatCanGoWrong": "It gives an action to the wrong person, or records a decision nobody actually made.",
+      "whenToStop": "Pause it if people act on a summary that got a decision wrong, or a guest wasn't told they were being recorded.",
+      "humanHandoff": "The meeting owner skims the summary before it's posted and fixes owners and deadlines."
+    },
+    "reads_untrusted_content": false,
     "source_url": null,
     "published_at": "2026-09-21",
     "is_example": true
@@ -884,6 +1022,12 @@
     "setup_time": "20 minutes per SOP",
     "monthly_cost": "$0-$25",
     "impact": "Medium",
+    "safety": {
+      "whatCanGoWrong": "It writes a tidy SOP that skips a step you did on screen but never said out loud.",
+      "whenToStop": "Stop using a document the moment someone follows it and gets a different result than you do.",
+      "humanHandoff": "The person who actually does the task reviews each SOP before it's filed as the official version."
+    },
+    "reads_untrusted_content": false,
     "source_url": null,
     "published_at": "2026-09-20",
     "is_example": true
@@ -920,6 +1064,12 @@
     "setup_time": "1 hour/month",
     "monthly_cost": "$0-$30",
     "impact": "Medium",
+    "safety": {
+      "whatCanGoWrong": "A caption names a client or shows an address you didn't mean to share, or oversells what the job involved.",
+      "whenToStop": "Pause scheduling if a client asks why their home or face is in a post they never approved.",
+      "humanHandoff": "You approve the month's posts before they're scheduled and answer comments yourself."
+    },
+    "reads_untrusted_content": false,
     "source_url": null,
     "published_at": "2026-09-19",
     "is_example": true
@@ -957,6 +1107,12 @@
     "setup_time": "1 hour/month",
     "monthly_cost": "$0-$50",
     "impact": "Medium",
+    "safety": {
+      "whatCanGoWrong": "It pads the email with a tip or offer you never gave it, or gets a date or price wrong.",
+      "whenToStop": "Hold the send whenever a draft includes anything that wasn't in your notes.",
+      "humanHandoff": "You read the final draft and press send yourself, every month."
+    },
+    "reads_untrusted_content": false,
     "source_url": null,
     "published_at": "2026-09-18",
     "is_example": true
@@ -991,6 +1147,12 @@
     "setup_time": "1-2 hours",
     "monthly_cost": "Included in Shopify",
     "impact": "Medium",
+    "safety": {
+      "whatCanGoWrong": "It invents a spec, material or claim (waterproof, organic, one size fits all) that isn't on the spec sheet.",
+      "whenToStop": "Pause publishing if a return or complaint traces back to something a description promised.",
+      "humanHandoff": "Someone checks each description against the spec sheet before it goes live, sizing and safety claims first."
+    },
+    "reads_untrusted_content": false,
     "source_url": null,
     "published_at": "2026-09-17",
     "is_example": true
@@ -1029,6 +1191,12 @@
     "setup_time": "2 hours",
     "monthly_cost": "$0-$60",
     "impact": "Medium",
+    "safety": {
+      "whatCanGoWrong": "It sends a cheerful \"we miss you\" to someone who left after a complaint, or who already unsubscribed.",
+      "whenToStop": "Stop the sequence if unsubscribes or spam complaints jump, or a reply shows it reached the wrong person.",
+      "humanHandoff": "Every customer reply comes to you; the agent drafts the sequence, it doesn't hold the conversation."
+    },
+    "reads_untrusted_content": false,
     "source_url": null,
     "published_at": "2026-09-16",
     "is_example": true
@@ -1065,6 +1233,12 @@
     "setup_time": "Half a day",
     "monthly_cost": "$97+",
     "impact": "High",
+    "safety": {
+      "whatCanGoWrong": "It books a showing in a slot you can't make, or tells a lead something untrue about the property.",
+      "whenToStop": "Pause it if showings get double-booked, or it starts fielding questions on price or terms.",
+      "humanHandoff": "Negotiation, applications and anything not covered by the listing go straight to you."
+    },
+    "reads_untrusted_content": true,
     "source_url": null,
     "published_at": "2026-09-15",
     "is_example": true
@@ -1100,6 +1274,12 @@
     "setup_time": "2 hours",
     "monthly_cost": "$0-$50",
     "impact": "Medium",
+    "safety": {
+      "whatCanGoWrong": "A recall goes to a patient who's already booked, has left the practice, or asked not to be contacted.",
+      "whenToStop": "Pause it if a patient flags a wrong or repeated message, or their details land in a general chat tool.",
+      "humanHandoff": "The front desk checks the recall list before anything sends and handles every reply about symptoms or billing."
+    },
+    "reads_untrusted_content": false,
     "source_url": null,
     "published_at": "2026-09-14",
     "is_example": true
@@ -1135,6 +1315,12 @@
     "setup_time": "2 hours",
     "monthly_cost": "$20",
     "impact": "Medium",
+    "safety": {
+      "whatCanGoWrong": "It builds the prep list from stale counts, or suggests a special around stock that's already gone off.",
+      "whenToStop": "Stop trusting it when its lists drift from what the line actually used, or counts stop getting entered.",
+      "humanHandoff": "The chef signs off on the list every morning and decides what's safe to serve; it only suggests."
+    },
+    "reads_untrusted_content": false,
     "source_url": null,
     "published_at": "2026-09-13",
     "is_example": true
@@ -1172,6 +1358,12 @@
     "setup_time": "1-2 days",
     "monthly_cost": "$20-$50",
     "impact": "Medium",
+    "safety": {
+      "whatCanGoWrong": "It credits work that isn't finished, or mentions one client's project in another client's update.",
+      "whenToStop": "Pause it the first time a report lists unfinished tasks as done or lands in the wrong client's inbox.",
+      "humanHandoff": "You read and send each update yourself; anything about delays, scope or budget is yours to write."
+    },
+    "reads_untrusted_content": false,
     "source_url": null,
     "published_at": "2026-09-12",
     "is_example": true

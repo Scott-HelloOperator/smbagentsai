@@ -4,7 +4,10 @@
 body { @apply bg-cream font-sans text-ink antialiased; }
 h1, h2, h3, .font-serif { font-variation-settings: "SOFT" 30, "WONK" 0; }
 ::selection { background: #FCEBC0; }
-.flip { perspective: 1200px; }
+.flip { perspective: 1200px; height: 340px; }
+/* Narrow cards (small phones, 2-up tablets, 3-up small laptops) get a little more height so the back's safety box fits. */
+.flip-wrap { container-type: inline-size; }
+@container (max-width: 349px) { .flip { height: 384px; } }
 .flip-inner { position: relative; transition: transform .55s cubic-bezier(.2,.7,.2,1); transform-style: preserve-3d; height: 100%; }
 .flip.is-flipped .flip-inner { transform: rotateY(180deg); }
 .face { position: absolute; inset: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden; }

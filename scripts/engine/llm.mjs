@@ -1,6 +1,7 @@
 // Pluggable LLM provider. Set ENGINE_LLM_PROVIDER=openai|anthropic (auto-detected from whichever key exists).
 import { CATEGORIES, INDUSTRIES, TOOLS, DIFFICULTIES } from "./taxonomy.mjs";
 import { goalErrors, GOALS_RULES } from "./goals.mjs";
+import { safetyErrors, SAFETY_RULES } from "./safety.mjs";
 
 export function provider() {
   const p = process.env.ENGINE_LLM_PROVIDER || (process.env.OPENAI_API_KEY ? "openai" : process.env.ANTHROPIC_API_KEY ? "anthropic" : null);
@@ -24,7 +25,8 @@ ${GOALS_RULES}
 - difficulty: one of ${DIFFICULTIES.join(" | ")}
 - setup_time / monthly_cost: from the post if stated, else "Not stated".
 - impact: High | Medium | Low (your judgment of value to a typical SMB).
-Respond with JSON only: {"accept":boolean,"reject_reason":string|null,"evidence":string[],"title","category","result","summary","what_they_did","how_it_went","worth_knowing","prompt","steps":string[],"tools":string[],"agent","industries":string[],"difficulty","setup_time","monthly_cost","impact"}`;
+${SAFETY_RULES}
+Respond with JSON only: {"accept":boolean,"reject_reason":string|null,"evidence":string[],"title","category","result","summary","what_they_did","how_it_went","worth_knowing","prompt","steps":string[],"tools":string[],"agent","industries":string[],"difficulty","setup_time","monthly_cost","impact","safety":{"whatCanGoWrong":string,"whenToStop":string,"humanHandoff":string},"reads_untrusted_content":boolean}`;
 
 export async function rewrite(c) {
   const user = `SOURCE URL: ${c.url}\nSOURCE: ${c.source}\nTITLE: ${c.title}\nPOST:\n${c.text.slice(0, 12000)}`;
@@ -64,6 +66,7 @@ export function validate(o, c) {
   const nums = `${o.result} ${o.how_it_went} ${o.summary}`.match(/\d[\d,.]*%?/g) || [];
   for (const n of nums) if (!src.includes(n.replace(/,/g, "")) && !src.includes(n)) errs.push(`number not in source: ${n}`);
   errs.push(...goalErrors(o, src));
+  errs.push(...safetyErrors(o));
   o.industries = (o.industries || []).filter((x) => INDUSTRIES.includes(x));
   return errs;
 }

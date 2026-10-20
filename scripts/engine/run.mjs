@@ -44,6 +44,7 @@ for (const { c } of passing.slice(0, MAX)) {
       what_they_did: o.what_they_did, how_it_went: o.how_it_went, worth_knowing: o.worth_knowing, prompt: o.prompt, steps: o.steps,
       tools: o.tools || [], agent: o.agent || "Not stated", industries: o.industries, difficulty: o.difficulty, setup_time: o.setup_time || "Not stated",
       monthly_cost: o.monthly_cost || "Not stated", impact: ["High", "Medium", "Low"].includes(o.impact) ? o.impact : "Medium",
+      safety: { whatCanGoWrong: o.safety.whatCanGoWrong.trim(), whenToStop: o.safety.whenToStop.trim(), humanHandoff: o.safety.humanHandoff.trim() }, reads_untrusted_content: o.reads_untrusted_content,
       source_url: c.url, published_at: new Date().toISOString().slice(0, 10), is_example: false, is_published: process.env.ENGINE_AUTO_PUBLISH !== "false" };
     const r = await sb("use_cases", { method: "POST", headers: { Prefer: "return=minimal" }, body: JSON.stringify(row) });
     if (!r.ok) throw new Error(`insert ${r.status} ${await r.text()}`);

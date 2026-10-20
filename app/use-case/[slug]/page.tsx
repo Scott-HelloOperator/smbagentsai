@@ -10,6 +10,7 @@ import HoursCalc from "@/components/HoursCalc";
 import ShareButtons from "@/components/ShareButtons";
 import ForwardButton from "@/components/ForwardButton";
 import { Jack } from "@/components/Logo";
+import SafetyBox from "@/components/SafetyBox";
 export const revalidate = 3600;
 export async function generateStaticParams() { return (await getUseCases()).map((u) => ({ slug: u.slug })); }
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
@@ -50,6 +51,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
         <section className="border-t border-ink/10 pt-10"><H2>What they did</H2><p className="mt-3">{u.what_they_did}</p><p className="mt-2 text-sm text-ink/70">Agent/tool used: {u.agent}</p></section>
         <section className="border-t border-ink/10 pt-10"><H2>How it went</H2><p className="mt-3">{u.how_it_went}</p></section>
         <section className="border-l-2 border-clay-500 pl-5"><p className="eyebrow !text-clay-700">Worth knowing</p><p className="mt-2">{u.worth_knowing}</p></section>
+        <SafetyBox u={u} />
         <section className="rounded-2xl border border-ink/10 bg-[#F4EDE2] p-5 sm:p-6" id="prompt">
           <div className="flex items-center justify-between gap-3"><H2>Copy-paste prompt</H2><CopyButton text={u.prompt} /></div>
           <pre className="mt-4 whitespace-pre-wrap rounded-xl border border-ink/10 bg-white p-4 font-mono text-[14px] leading-relaxed text-ink/85">{u.prompt}</pre>
